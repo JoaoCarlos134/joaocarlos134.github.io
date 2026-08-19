@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f6f1;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --border: #e1dfd3;
+  --ink: #1b1d16;
+  --ink-muted: #5c6354;
+  --accent: #b3661f;
+  --accent-strong: #8f5015;
+  --accent-soft: #f0e2cc;
+  --accent-contrast: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #12140f;
+  --bg-elevated: #191c14;
+  --surface: #1e2318;
+  --border: #2c3323;
+  --ink: #edeee6;
+  --ink-muted: #9ba394;
+  --accent: #e0a458;
+  --accent-strong: #f2c185;
+  --accent-soft: #332812;
+  --accent-contrast: #12140f;
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-contrast: var(--accent-contrast);
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

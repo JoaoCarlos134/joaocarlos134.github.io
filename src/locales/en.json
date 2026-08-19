@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Your Name — Portfolio",
+    "description": "TODO: one sentence describing who you are and what you do."
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "projects": "Projects",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "TODO Your Name",
+    "role": "TODO Your Role / Title",
+    "tagline": "TODO one-sentence pitch — who you are, your domain, what you're looking for.",
+    "ctaContact": "Get in touch",
+    "ctaResume": "Download CV"
+  },
+  "about": {
+    "heading": "About",
+    "body": "TODO 3-5 sentence summary. Who you are, your domain, what kind of work you're looking for."
+  },
+  "experience": {
+    "heading": "Experience",
+    "items": [
+      {
+        "role": "TODO Role",
+        "company": "TODO Company",
+        "period": "TODO 2023 — Present",
+        "bullets": [
+          "TODO action → result → metric",
+          "TODO action → result → metric"
+        ]
+      },
+      {
+        "role": "TODO Role",
+        "company": "TODO Company",
+        "period": "TODO 2021 — 2023",
+        "bullets": [
+          "TODO action → result → metric",
+          "TODO action → result → metric"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Skills",
+    "groups": [
+      {
+        "category": "Languages",
+        "items": ["TODO"]
+      },
+      {
+        "category": "Frameworks & Tools",
+        "items": ["TODO"]
+      },
+      {
+        "category": "Domain",
+        "items": ["TODO"]
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Projects",
+    "items": [
+      {
+        "name": "TODO Project Name",
+        "description": "TODO 1-2 line description of the project and your role in it.",
+        "tags": ["TODO", "Tag"],
+        "repo": "#",
+        "demo": "#"
+      },
+      {
+        "name": "TODO Project Name",
+        "description": "TODO 1-2 line description of the project and your role in it.",
+        "tags": ["TODO", "Tag"],
+        "repo": "#",
+        "demo": "#"
+      },
+      {
+        "name": "TODO Project Name",
+        "description": "TODO 1-2 line description of the project and your role in it.",
+        "tags": ["TODO", "Tag"],
+        "repo": "#",
+        "demo": "#"
+      }
+    ]
+  },
+  "education": {
+    "heading": "Education & Certifications",
+    "items": [
+      {
+        "title": "TODO Degree",
+        "org": "TODO Institution",
+        "period": "TODO Dates"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's talk",
+    "body": "TODO short line inviting people to reach out.",
+    "email": "TODO you@example.com",
+    "linkedin": "#",
+    "github": "#"
+  },
+  "footer": {
+    "text": "Built with React, Vite, Tailwind & Framer Motion."
+  }
+}

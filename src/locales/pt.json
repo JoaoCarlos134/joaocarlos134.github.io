@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Seu Nome — Portfólio",
+    "description": "TODO: uma frase descrevendo quem você é e o que você faz."
+  },
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "education": "Formação",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "TODO Seu Nome",
+    "role": "TODO Seu Cargo / Título",
+    "tagline": "TODO uma frase de apresentação — quem você é, sua área, o que você busca.",
+    "ctaContact": "Entrar em contato",
+    "ctaResume": "Baixar currículo"
+  },
+  "about": {
+    "heading": "Sobre",
+    "body": "TODO resumo de 3-5 frases. Quem você é, sua área, que tipo de trabalho você busca."
+  },
+  "experience": {
+    "heading": "Experiência",
+    "items": [
+      {
+        "role": "TODO Cargo",
+        "company": "TODO Empresa",
+        "period": "TODO 2023 — Atual",
+        "bullets": [
+          "TODO ação → resultado → métrica",
+          "TODO ação → resultado → métrica"
+        ]
+      },
+      {
+        "role": "TODO Cargo",
+        "company": "TODO Empresa",
+        "period": "TODO 2021 — 2023",
+        "bullets": [
+          "TODO ação → resultado → métrica",
+          "TODO ação → resultado → métrica"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "heading": "Habilidades",
+    "groups": [
+      {
+        "category": "Linguagens",
+        "items": ["TODO"]
+      },
+      {
+        "category": "Frameworks & Ferramentas",
+        "items": ["TODO"]
+      },
+      {
+        "category": "Domínio",
+        "items": ["TODO"]
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Projetos",
+    "items": [
+      {
+        "name": "TODO Nome do Projeto",
+        "description": "TODO descrição de 1-2 linhas do projeto e do seu papel nele.",
+        "tags": ["TODO", "Tag"],
+        "repo": "#",
+        "demo": "#"
+      },
+      {
+        "name": "TODO Nome do Projeto",
+        "description": "TODO descrição de 1-2 linhas do projeto e do seu papel nele.",
+        "tags": ["TODO", "Tag"],
+        "repo": "#",
+        "demo": "#"
+      },
+      {
+        "name": "TODO Nome do Projeto",
+        "description": "TODO descrição de 1-2 linhas do projeto e do seu papel nele.",
+        "tags": ["TODO", "Tag"],
+        "repo": "#",
+        "demo": "#"
+      }
+    ]
+  },
+  "education": {
+    "heading": "Formação & Certificações",
+    "items": [
+      {
+        "title": "TODO Curso",
+        "org": "TODO Instituição",
+        "period": "TODO Datas"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Vamos conversar",
+    "body": "TODO frase curta convidando as pessoas a entrarem em contato.",
+    "email": "TODO voce@example.com",
+    "linkedin": "#",
+    "github": "#"
+  },
+  "footer": {
+    "text": "Construído com React, Vite, Tailwind & Framer Motion."
+  }
+}
