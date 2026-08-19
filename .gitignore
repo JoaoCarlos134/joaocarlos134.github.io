@@ -25,3 +25,4 @@ dist-ssr
 
 # Source CVs kept locally only — not published to the site repo
 /*.pdf
+.originkit/

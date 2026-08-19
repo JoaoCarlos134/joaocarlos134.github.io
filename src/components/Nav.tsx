@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, Moon, Sun } from 'lucide-react'
-import { useTheme } from '../hooks/useTheme'
+import { Menu, X } from 'lucide-react'
 
 const SECTION_IDS = ['about', 'experience', 'publications', 'skills', 'education', 'contact']
 
 export function Nav() {
   const { t, i18n } = useTranslation()
-  const { theme, toggleTheme } = useTheme()
   const [active, setActive] = useState('about')
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -66,15 +64,6 @@ export function Nav() {
               </button>
             ))}
           </div>
-
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="rounded-full border border-border p-2 text-ink-muted hover:text-ink"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
 
           <button
             type="button"

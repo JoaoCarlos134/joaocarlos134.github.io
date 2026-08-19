@@ -1,35 +1,32 @@
 @import "tailwindcss";
 
+/*
+ * Palette tuned for screen comfort rather than raw white: a faint sage tint
+ * on the ground (Frontiers in Psychology, 2025 — light-green backgrounds
+ * measurably reduce visual fatigue vs. pure #FFFFFF in on-screen reading),
+ * soft near-black ink instead of pure #000 (avoids glare/halation on bright
+ * displays while keeping ~15:1 contrast), and a muted cool teal accent — the
+ * literature ties cooler, muted hues to lower eye strain over warm/saturated
+ * ones, so the accent stays in the same cool family as the ground instead of
+ * fighting it with a warm pop.
+ */
 :root {
-  --bg: #f7f6f1;
-  --bg-elevated: #ffffff;
+  --bg: #f5f8f6;
   --surface: #ffffff;
-  --border: #e1dfd3;
-  --ink: #1b1d16;
-  --ink-muted: #5c6354;
-  --accent: #b3661f;
-  --accent-strong: #8f5015;
-  --accent-soft: #f0e2cc;
+  --surface-2: #eaf1ed;
+  --border: #dbe6e0;
+  --ink: #17211c;
+  --ink-muted: #57685f;
+  --accent: #2f7d6b;
+  --accent-strong: #1f5a4c;
+  --accent-soft: #dcede7;
   --accent-contrast: #ffffff;
-}
-
-[data-theme="dark"] {
-  --bg: #12140f;
-  --bg-elevated: #191c14;
-  --surface: #1e2318;
-  --border: #2c3323;
-  --ink: #edeee6;
-  --ink-muted: #9ba394;
-  --accent: #e0a458;
-  --accent-strong: #f2c185;
-  --accent-soft: #332812;
-  --accent-contrast: #12140f;
 }
 
 @theme {
   --color-bg: var(--bg);
-  --color-bg-elevated: var(--bg-elevated);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-border: var(--border);
   --color-ink: var(--ink);
   --color-ink-muted: var(--ink-muted);
@@ -55,7 +52,6 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection {
