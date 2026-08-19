@@ -42,7 +42,7 @@ Section components read their copy via `useTranslation()` — to add or reorder 
 
 Push to `main` — `.github/workflows/deploy.yml` builds and deploys to GitHub Pages automatically. One-time setup on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-This repo is set up as a **user page** (`vite.config.ts` has `base: '/'`), so it should be named exactly `<your-github-username>.github.io` and will be served at `https://<your-github-username>.github.io/`. If you rename it to something else (a project page), change `base` in `vite.config.ts` to `'/<repo-name>/'`.
+This repo is set up as a **user page** (`vite.config.ts` has `base: '/'`): [github.com/JoaoCarlos134/joaocarlos134.github.io](https://github.com/JoaoCarlos134/joaocarlos134.github.io), served at `https://joaocarlos134.github.io/`. If you ever fork this into a differently-named repo (a project page), change `base` in `vite.config.ts` to `'/<repo-name>/'`.
 
 ## Notes for this machine / a new machine
 

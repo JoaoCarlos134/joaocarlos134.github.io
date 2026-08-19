@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Seu Nome — Portfólio",
+    "title": "João Carlos Jachenski Junior — Portfólio",
     "description": "TODO: uma frase descrevendo quem você é e o que você faz."
   },
   "nav": {
@@ -13,7 +13,7 @@
   },
   "hero": {
     "greeting": "Olá, eu sou",
-    "name": "TODO Seu Nome",
+    "name": "João Carlos Jachenski Junior",
     "role": "TODO Seu Cargo / Título",
     "tagline": "TODO uma frase de apresentação — quem você é, sua área, o que você busca.",
     "ctaContact": "Entrar em contato",

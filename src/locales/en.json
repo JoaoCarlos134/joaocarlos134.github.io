@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Your Name — Portfolio",
+    "title": "João Carlos Jachenski Junior — Portfolio",
     "description": "TODO: one sentence describing who you are and what you do."
   },
   "nav": {
@@ -13,7 +13,7 @@
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "name": "TODO Your Name",
+    "name": "João Carlos Jachenski Junior",
     "role": "TODO Your Role / Title",
     "tagline": "TODO one-sentence pitch — who you are, your domain, what you're looking for.",
     "ctaContact": "Get in touch",
