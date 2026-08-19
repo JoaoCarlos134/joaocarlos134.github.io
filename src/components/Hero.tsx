@@ -1,7 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { motion, useReducedMotion } from 'framer-motion'
-import BorderOrbit from '@/components/originkit/ui/hero-18/border-orbit'
+import PixelDrift from '@/components/originkit/ui/pixeldrift'
 import IsometricButton from '@/components/originkit/ui/keycap-button'
+
+const GREETING_COLORS = ['#2f7d6b', '#1f5a4c', '#7fa89c']
+const GREETING_TRANSITION = { type: 'tween' as const, duration: 1.1, ease: 'easeOut' }
+const GREETING_STYLE = { width: '100%', height: '100%', minWidth: 0, minHeight: 0 }
 
 const container = {
   hidden: {},
@@ -25,22 +29,30 @@ export function Hero() {
         animate={reduceMotion ? undefined : 'show'}
         className="mx-auto flex max-w-2xl flex-col items-center gap-5 text-center"
       >
-        <motion.div
-          variants={item}
-          className="relative flex items-center gap-2 rounded-full bg-surface px-4 py-1.5 shadow-sm"
-        >
-          <BorderOrbit color="#2f7d6b" arcPercent={26} speed={2.5} />
-          <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          <span className="font-mono text-xs uppercase tracking-[0.1em] text-ink-muted">
-            {t('hero.greeting')}
-          </span>
+        <motion.div variants={item} className="h-16 w-64 sm:h-20 sm:w-80">
+          <PixelDrift
+            text={t('hero.greeting')}
+            colors={GREETING_COLORS}
+            mode="onEnter"
+            replay={false}
+            position="middle"
+            particleSize={9}
+            particleCount={36}
+            mouseEnabled
+            mouseRadius={40}
+            mouseForce={20}
+            fontSize={32}
+            autoFit
+            transition={GREETING_TRANSITION}
+            style={GREETING_STYLE}
+          />
         </motion.div>
 
         <motion.h1
           variants={item}
           className="text-balance text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
         >
-          {t('hero.name')}
+          {t('hero.shortName')}
         </motion.h1>
         <motion.p variants={item} className="text-lg font-medium text-accent-strong sm:text-xl">
           {t('hero.role')}

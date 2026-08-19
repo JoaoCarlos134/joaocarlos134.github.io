@@ -14,6 +14,7 @@
   "hero": {
     "greeting": "Olá, eu sou",
     "name": "João Carlos Jachenski Junior",
+    "shortName": "João Carlos",
     "role": "Estudante de Engenharia Elétrica & Bolsista de Pesquisa em ML",
     "tagline": "Pesquisando machine learning aplicado a sistemas fotovoltaicos e energéticos no LACTEC — da detecção de sujidade à previsão de demanda.",
     "ctaContact": "Entrar em contato",
