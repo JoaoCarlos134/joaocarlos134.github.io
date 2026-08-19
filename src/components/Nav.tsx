@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useTheme } from '../hooks/useTheme'
 
-const SECTION_IDS = ['about', 'experience', 'skills', 'projects', 'education', 'contact']
+const SECTION_IDS = ['about', 'experience', 'publications', 'skills', 'education', 'contact']
 
 export function Nav() {
   const { t, i18n } = useTranslation()

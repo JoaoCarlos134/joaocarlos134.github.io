@@ -15,7 +15,7 @@ export function Skills() {
   return (
     <section id="skills" className="mx-auto max-w-3xl px-5 py-24">
       <ScrollReveal>
-        <SectionHeading eyebrow="03" title={t('skills.heading')} />
+        <SectionHeading eyebrow="04" title={t('skills.heading')} />
       </ScrollReveal>
 
       <div className="mt-8 flex flex-col gap-6">

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Source CVs kept locally only — not published to the site repo
+/*.pdf

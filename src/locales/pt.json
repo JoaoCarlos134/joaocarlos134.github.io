@@ -1,48 +1,96 @@
 {
   "meta": {
     "title": "João Carlos Jachenski Junior — Portfólio",
-    "description": "TODO: uma frase descrevendo quem você é e o que você faz."
+    "description": "Estudante de Engenharia Elétrica e bolsista de pesquisa em machine learning no LACTEC, atuando com monitoramento fotovoltaico e previsão de demanda energética."
   },
   "nav": {
     "about": "Sobre",
     "experience": "Experiência",
+    "publications": "Publicações",
     "skills": "Habilidades",
-    "projects": "Projetos",
     "education": "Formação",
     "contact": "Contato"
   },
   "hero": {
     "greeting": "Olá, eu sou",
     "name": "João Carlos Jachenski Junior",
-    "role": "TODO Seu Cargo / Título",
-    "tagline": "TODO uma frase de apresentação — quem você é, sua área, o que você busca.",
+    "role": "Estudante de Engenharia Elétrica & Bolsista de Pesquisa em ML",
+    "tagline": "Pesquisando machine learning aplicado a sistemas fotovoltaicos e energéticos no LACTEC — da detecção de sujidade à previsão de demanda.",
     "ctaContact": "Entrar em contato",
     "ctaResume": "Baixar currículo"
   },
   "about": {
     "heading": "Sobre",
-    "body": "TODO resumo de 3-5 frases. Quem você é, sua área, que tipo de trabalho você busca."
+    "body": "Sou estudante de Engenharia Elétrica na Universidade Federal do Paraná (UFPR), com formação técnica em Informática pela TECPUC. Atuo como bolsista de pesquisa no LACTEC (Laboratório de Análises e Ciência Tecnológica), no setor CFG, desenvolvendo soluções de machine learning para sistemas elétricos e fotovoltaicos — da detecção de sujidade à previsão de demanda energética."
   },
   "experience": {
     "heading": "Experiência",
     "items": [
       {
-        "role": "TODO Cargo",
-        "company": "TODO Empresa",
-        "period": "TODO 2023 — Atual",
+        "role": "Bolsista de Pesquisa",
+        "company": "Institutos Lactec — Setor CFG",
+        "period": "2025 — Atual",
         "bullets": [
-          "TODO ação → resultado → métrica",
-          "TODO ação → resultado → métrica"
+          "Desenvolvimento de modelos de machine learning para monitoramento fotovoltaico e previsão de demanda elétrica, contribuindo para 5 sistemas de software registrados no INPI e 2 publicações revisadas por pares.",
+          "Atuação em todo o pipeline — do processamento de dados climáticos e de sensores até modelos implantáveis de detecção de sujidade e previsão de carga para sistemas residenciais e de concessionária."
         ]
       },
       {
-        "role": "TODO Cargo",
-        "company": "TODO Empresa",
-        "period": "TODO 2021 — 2023",
+        "role": "Integrante de Equipe de Pesquisa",
+        "company": "Rede Agrointeligente — financiado pela ABPI",
+        "period": "2025 — Atual",
         "bullets": [
-          "TODO ação → resultado → métrica",
-          "TODO ação → resultado → métrica"
+          "Contribuição em projeto de pesquisa que desenvolve soluções de geração renovável e armazenamento de energia para sistemas agrícolas irrigados, buscando reduzir custos e emissões de carbono no campo.",
+          "Parte de equipe multi-institucional coordenada por Bruno Knevitz Hammerschmitt, ao lado de pesquisadores do LACTEC."
         ]
+      }
+    ]
+  },
+  "publications": {
+    "heading": "Publicações & Patentes",
+    "articlesHeading": "Artigos em Periódicos",
+    "patentsHeading": "Software Registrado (INPI)",
+    "articles": [
+      {
+        "authors": "Hammerschmitt, B. K.; Jachenski Junior, J. C.; Mario, L.; Tonolo, E. A.; Fonseca, P. H.; Silva, R. M.; Menezes, N. P.",
+        "title": "Soiling Status Detection in Photovoltaic Energy Systems Using Machine Learning and Weather Data for Cleaning Alerts",
+        "venue": "Energies, v. 19, p. 1964",
+        "year": "2026",
+        "tag": "Indexado JCR"
+      },
+      {
+        "authors": "Jachenski Junior, J. C.; Rambo, M. V. H.; Leone, A. S.; Lopes, R. F. L.; Iantorno, L. M.; Riella, R. J.; Hammerschmitt, B. K.",
+        "title": "A Comparison of State-of-the-Art Time Series Classification for Demand Estimation in Prosumers",
+        "venue": "IOSR Journal of Business and Management, v. 27, p. 68–73",
+        "year": "2025",
+        "tag": ""
+      }
+    ],
+    "patents": [
+      {
+        "title": "Estrutura computacional probabilística para identificação do estado operacional de sistemas fotovoltaicos com sistema de alerta de limpeza",
+        "registry": "BR512026000941-3",
+        "date": "Fev 2025"
+      },
+      {
+        "title": "Sistema multiescala para previsão de consumo de energia elétrica residencial em múltiplos horizontes",
+        "registry": "BR512025006319-9",
+        "date": "Nov 2025"
+      },
+      {
+        "title": "Sistema multiclasse de monitoramento e alerta de sujidade em sistemas fotovoltaicos",
+        "registry": "BR512026000942-1",
+        "date": "Jan 2026"
+      },
+      {
+        "title": "Sistema Online de Monitoramento e Alerta de Sujidade para Módulos Fotovoltaicos",
+        "registry": "BR512026003168-0",
+        "date": "Fev 2026"
+      },
+      {
+        "title": "PivotEnergy: Sistema para Estimativa do Perfil de Carga Elétrica em Pivôs Centrais de Irrigação",
+        "registry": "BR512026006223-3",
+        "date": "Jun 2026"
       }
     ]
   },
@@ -50,42 +98,16 @@
     "heading": "Habilidades",
     "groups": [
       {
-        "category": "Linguagens",
-        "items": ["TODO"]
+        "category": "Pesquisa & Domínio",
+        "items": ["Machine Learning", "Previsão de Séries Temporais", "Sistemas Fotovoltaicos", "Sistemas Elétricos e de Energia", "Microeletrônica — Projeto"]
       },
       {
-        "category": "Frameworks & Ferramentas",
-        "items": ["TODO"]
+        "category": "Programação & Ferramentas",
+        "items": ["TODO — ex. Python, PyTorch, MATLAB..."]
       },
       {
-        "category": "Domínio",
-        "items": ["TODO"]
-      }
-    ]
-  },
-  "projects": {
-    "heading": "Projetos",
-    "items": [
-      {
-        "name": "TODO Nome do Projeto",
-        "description": "TODO descrição de 1-2 linhas do projeto e do seu papel nele.",
-        "tags": ["TODO", "Tag"],
-        "repo": "#",
-        "demo": "#"
-      },
-      {
-        "name": "TODO Nome do Projeto",
-        "description": "TODO descrição de 1-2 linhas do projeto e do seu papel nele.",
-        "tags": ["TODO", "Tag"],
-        "repo": "#",
-        "demo": "#"
-      },
-      {
-        "name": "TODO Nome do Projeto",
-        "description": "TODO descrição de 1-2 linhas do projeto e do seu papel nele.",
-        "tags": ["TODO", "Tag"],
-        "repo": "#",
-        "demo": "#"
+        "category": "Idiomas",
+        "items": ["Português — nativo", "Inglês — proficiência profissional", "Alemão — básico"]
       }
     ]
   },
@@ -93,18 +115,28 @@
     "heading": "Formação & Certificações",
     "items": [
       {
-        "title": "TODO Curso",
-        "org": "TODO Instituição",
-        "period": "TODO Datas"
+        "title": "Graduação em Engenharia Elétrica (em andamento)",
+        "org": "Universidade Federal do Paraná (UFPR)",
+        "period": "2023 — Atual"
+      },
+      {
+        "title": "Técnico em Informática (integrado ao Ensino Médio)",
+        "org": "TECPUC — Centro de Educação Profissional Irmão Mário Cristóvão",
+        "period": "2020 — 2022"
+      },
+      {
+        "title": "Curso de Inglês (224h)",
+        "org": "INFLUX English School",
+        "period": "2016 — 2019"
       }
     ]
   },
   "contact": {
     "heading": "Vamos conversar",
-    "body": "TODO frase curta convidando as pessoas a entrarem em contato.",
+    "body": "Interessado em colaborações de pesquisa, projetos de sistemas de energia ou trabalhos com machine learning — entre em contato.",
     "email": "TODO voce@example.com",
-    "linkedin": "#",
-    "github": "#"
+    "linkedin": "TODO",
+    "github": "https://github.com/JoaoCarlos134"
   },
   "footer": {
     "text": "Construído com React, Vite, Tailwind & Framer Motion."
