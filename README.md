@@ -29,14 +29,19 @@ Also add your résumé PDF at `public/resume.pdf` — the hero's "Download CV" b
 
 ```
 src/
-  components/       one file per page section, plus Nav/Footer/shared bits
-  hooks/useTheme.ts  light/dark toggle, persisted to localStorage
-  locales/          en.json, pt.json — all copy
-  i18n.ts           react-i18next setup (browser-language detection + localStorage)
-  index.css         Tailwind import + color/font tokens (light & dark)
+  components/            one file per page section, plus Nav/Footer/shared bits
+  components/originkit/  vendored Originkit components (globe, keycap button, pixeldrift)
+  hooks/useGeoCompanion  tracks which section is in view, for the globe
+  lib/geoStops.ts        section id -> real-world coordinates the globe flies to
+  locales/               en.json, pt.json — all copy
+  i18n.ts                react-i18next setup (browser-language detection + localStorage)
+  index.css              Tailwind import + color/font tokens
+public/geo/              land polygons the globe renders from (vendored, not fetched remotely)
 ```
 
 Section components read their copy via `useTranslation()` — to add or reorder a section, add the JSON block, add the component, and drop it into `src/App.tsx`.
+
+The globe on the right is driven by scroll only: `lib/geoStops.ts` maps each section to a place, and `GlobeCompanion` spins the globe to it as that section comes into view. Adding a stop means adding an id there plus a matching `geoStops.<id>` entry in **both** locale files.
 
 ## Deploying
 

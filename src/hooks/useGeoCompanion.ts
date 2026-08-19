@@ -15,8 +15,18 @@ export function useGeoCompanion() {
     )
     const stopObserver = new IntersectionObserver(
       (entries) => {
-        const hit = entries.find((entry) => entry.isIntersecting)
-        if (hit && GEO_STOP_COORDS[hit.target.id]) setActiveStopId(hit.target.id)
+        // Nearest the viewport's middle, not first-in-batch: entry order is
+        // not document order, so a fast scroll past two short sections could
+        // otherwise land the globe on the wrong one.
+        const mid = window.innerHeight / 2
+        const hit = entries
+          .filter((e) => e.isIntersecting && GEO_STOP_COORDS[e.target.id])
+          .sort(
+            (a, b) =>
+              Math.abs(a.boundingClientRect.top + a.boundingClientRect.height / 2 - mid) -
+              Math.abs(b.boundingClientRect.top + b.boundingClientRect.height / 2 - mid),
+          )[0]
+        if (hit) setActiveStopId(hit.target.id)
       },
       { rootMargin: '-45% 0px -45% 0px' },
     )

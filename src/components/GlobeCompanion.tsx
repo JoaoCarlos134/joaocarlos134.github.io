@@ -55,10 +55,13 @@ export function GlobeCompanion() {
               showGrid
               graticuleColor="#dbe6e0"
               scale={9}
-              // Ambient spin, always on — rotateTo layers scroll-driven
-              // retargeting on top of it. No pointer interaction at all:
-              // this is a passive companion, not a toy.
-              speed={1.4}
+              // speed=0 is deliberate. The ambient spin and rotateTo share one
+              // target value, so any non-zero speed drags that target off the
+              // place we just landed on — measured at ~4.3°/s, i.e. ~43° adrift
+              // after 10s of reading, which defeats the whole point of landing
+              // there. Scrolling is the only thing that moves it: each new
+              // section spins it a full turn and sets it down on that place.
+              speed={0}
               interactive={false}
               stopOnHover={false}
               // Mount-time pose only — every move after that goes through

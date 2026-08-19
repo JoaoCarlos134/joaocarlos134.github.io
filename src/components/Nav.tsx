@@ -4,21 +4,36 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const SECTION_IDS = ['about', 'experience', 'publications', 'skills', 'education', 'contact']
+// 'hero' is watched but has no nav link, so sitting at the top of the page
+// highlights nothing — it used to default to 'about', claiming you were in a
+// section you hadn't reached yet.
+const WATCHED_IDS = ['hero', ...SECTION_IDS]
 
 export function Nav() {
   const { t, i18n } = useTranslation()
-  const [active, setActive] = useState('about')
+  const [active, setActive] = useState('hero')
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting)
-        if (visible) setActive(visible.target.id)
+        // Pick the entry nearest the viewport's middle rather than whatever
+        // happens to sit first in the callback batch: when a fast scroll puts
+        // two short sections in the band at once, entry order is not document
+        // order, so the highlight could land on either one.
+        const mid = window.innerHeight / 2
+        const best = entries
+          .filter((e) => e.isIntersecting)
+          .sort(
+            (a, b) =>
+              Math.abs(a.boundingClientRect.top + a.boundingClientRect.height / 2 - mid) -
+              Math.abs(b.boundingClientRect.top + b.boundingClientRect.height / 2 - mid),
+          )[0]
+        if (best) setActive(best.target.id)
       },
       { rootMargin: '-45% 0px -45% 0px' },
     )
-    SECTION_IDS.forEach((id) => {
+    WATCHED_IDS.forEach((id) => {
       const el = document.getElementById(id)
       if (el) observer.observe(el)
     })

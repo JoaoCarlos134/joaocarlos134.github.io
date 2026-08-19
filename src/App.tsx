@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
@@ -11,6 +12,8 @@ import { Footer } from './components/Footer'
 import { GlobeCompanion } from './components/GlobeCompanion'
 
 function App() {
+  const { t, i18n } = useTranslation()
+
   // A direct load of /#section fails silently: the browser's native
   // hash-scroll runs before React has mounted the target element, and it
   // never retries. Redo it once the DOM actually has the section.
@@ -18,6 +21,18 @@ function App() {
     if (!location.hash) return
     document.getElementById(location.hash.slice(1))?.scrollIntoView()
   }, [])
+
+  // The <html lang> and the tab title are outside React's tree, so switching
+  // language left both stuck on the English values baked into index.html —
+  // which mislabels the page for screen readers and search engines. The
+  // translated `meta.*` strings existed but nothing ever read them.
+  useEffect(() => {
+    document.documentElement.lang = i18n.language.startsWith('pt') ? 'pt-BR' : 'en'
+    document.title = t('meta.title')
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', t('meta.description'))
+  }, [t, i18n.language])
 
   return (
     <>

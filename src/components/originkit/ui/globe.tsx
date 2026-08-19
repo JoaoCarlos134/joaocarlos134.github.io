@@ -239,7 +239,12 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
 
     useImperativeHandle(ref, () => ({
         rotateTo(lat: number, lng: number) {
-            const targetLngRad = (lng * Math.PI) / 180;
+            // NEGATED: `rotation.x` here drives `globeGroup.rotation.y`, and a
+            // group rotated by +θ about Y brings longitude -θ to face the
+            // camera. Feeding longitude in un-negated points the globe at the
+            // mirror-image meridian (49°W renders as 49°E). Same reason the
+            // initial pose below is negated.
+            const targetLngRad = (-lng * Math.PI) / 180;
             const targetLatRad = Math.max(
                 -Math.PI / 2,
                 Math.min(Math.PI / 2, (lat * Math.PI) / 180)
@@ -334,48 +339,10 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
         const oceanMesh = new Mesh(oceanGeometry, oceanMaterial);
         scene.add(oceanMesh);
 
-        let globeOutlineMesh: Mesh | null = null;
-        if (showOutline && outlineColor && outlineRgba.a > 0) {
-            const outlinePositions: number[] = [];
-            const segments = 128;
-            for (let i = 0; i <= segments; i++) {
-                const angle = (i / segments) * Math.PI * 2;
-                const x = Math.cos(angle) * globeRadius;
-                const y = Math.sin(angle) * globeRadius;
-                const z = 0;
-                outlinePositions.push(x, y, z);
-            }
-            const outlinePoints: Vector3[] = [];
-            for (let i = 0; i < outlinePositions.length; i += 3) {
-                outlinePoints.push(
-                    new Vector3(
-                        outlinePositions[i],
-                        outlinePositions[i + 1],
-                        outlinePositions[i + 2]
-                    )
-                );
-            }
-            if (outlinePoints.length >= 2) {
-                outlinePoints.push(outlinePoints[0].clone());
-                const outlineColorObj = new Color(resolvedOutlineColor);
-                const outlineMaterial = new MeshBasicMaterial({
-                    color: outlineColorObj,
-                    transparent: outlineRgba.a < 1,
-                    opacity: outlineRgba.a,
-                });
-                const curve = new CatmullRomCurve3(outlinePoints);
-                const radius = (outlineWidth / 10) * 0.01;
-                const tubeGeometry = new TubeGeometry(
-                    curve,
-                    outlinePoints.length * 2,
-                    radius,
-                    8,
-                    false
-                );
-                globeOutlineMesh = new Mesh(tubeGeometry, outlineMaterial);
-            }
-        }
-        void globeOutlineMesh;
+        // (Upstream built a limb-outline ring here — 129 points, a spline and a
+        // TubeGeometry — then `void`ed it without ever adding it to the scene.
+        // Removed: it was pure mount-time cost for nothing on screen. The
+        // per-continent outlines below are what actually render.)
 
         const continentOutlineGroup = new Group();
 
@@ -482,8 +449,14 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
         const loadWorldData = async () => {
             try {
                 setIsLoading(true);
+                // Served from our own origin. Upstream shipped this pointing at
+                // raw.githubusercontent.com — 2.7 MB (bigger than the whole JS
+                // bundle) with max-age=300, re-fetched every 5 minutes, and a
+                // third-party single point of failure for the hero visual.
+                // Vendored instead at 110m resolution (232 KB), which is well
+                // past what a ~380px dot-sampled globe can resolve.
                 const response = await fetch(
-                    "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/50m/physical/ne_50m_land.json"
+                    `${import.meta.env.BASE_URL}geo/ne_110m_land.json`
                 );
                 if (!response.ok) throw new Error("Failed to load land data");
                 const landFeatures = await response.json();
@@ -596,9 +569,8 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
                             });
                         }
                     });
-                    console.log(
-                        `[Globe] Processed ${processedCount} land features, skipped ${skippedCount} grid features`
-                    );
+                    void processedCount;
+                    void skippedCount;
                 }
 
                 const bitmapWidth = 2048;
@@ -789,7 +761,9 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
             }
         };
 
-        const initialLongitudeRad = (initialLongitude * Math.PI) / 180;
+        // Negated — see the note in `rotateTo` above. Latitude needs no such
+        // flip: +lat about X does bring that parallel to face the camera.
+        const initialLongitudeRad = (-initialLongitude * Math.PI) / 180;
         const initialLatitudeRad = (initialLatitude * Math.PI) / 180;
         const rotation = { x: initialLongitudeRad, y: initialLatitudeRad };
         // Reuse the same object `rotateTo` writes to, seeded to the initial
@@ -1020,19 +994,17 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#ffffff",
+                        // Inherit, not a hard-coded #ffffff: upstream assumed a
+                        // dark page, which rendered this white-on-near-white
+                        // (i.e. invisible) here.
+                        color: "inherit",
+                        opacity: 0.7,
                         textAlign: "center",
                         padding: "16px",
-                        fontFamily:
-                            "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+                        font: "inherit",
                     }}
                 >
-                    <div style={{ fontSize: "16px", fontWeight: 600 }}>
-                        Error loading Earth visualization
-                    </div>
-                    <div style={{ fontSize: "13px", opacity: 0.7, marginTop: "4px" }}>
-                        {error}
-                    </div>
+                    <div style={{ fontSize: "13px", lineHeight: 1.4 }}>{error}</div>
                 </div>
             </div>
         );

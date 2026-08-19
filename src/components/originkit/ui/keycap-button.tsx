@@ -20,7 +20,9 @@
 
 import * as React from "react"
 import { useEffect, useLayoutEffect, useRef, useState } from "react"
-import { useAnimate, useReducedMotion, type Transition } from "motion/react"
+// framer-motion, not "motion/react": they are the same runtime published under
+// two names, and importing both pulled a second full copy into the bundle.
+import { useAnimate, useReducedMotion, type Transition } from "framer-motion"
 
 /** Rounded is a percent of the MAXIMUM possible radius — half the short side —
  *  so 100 is a true pill at any button size and 0 is a square corner. A CSS
