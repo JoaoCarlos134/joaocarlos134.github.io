@@ -23,7 +23,7 @@ export function Publications() {
   const patents = t('publications.patents', { returnObjects: true }) as Patent[]
 
   return (
-    <section id="publications" className="mx-auto max-w-3xl px-5 py-24">
+    <section id="publications" className="py-24">
       <ScrollReveal>
         <SectionHeading eyebrow="03" title={t('publications.heading')} />
       </ScrollReveal>

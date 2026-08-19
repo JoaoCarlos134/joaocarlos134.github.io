@@ -37,11 +37,11 @@ export function GlobeCompanion() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed bottom-4 right-4 z-40 flex flex-col items-center gap-2 sm:bottom-6 sm:right-6"
+      className="pointer-events-none fixed bottom-4 right-4 z-40 flex flex-col items-center gap-2 sm:bottom-6 sm:right-6 lg:sticky lg:bottom-auto lg:right-auto lg:top-28 lg:z-0"
       animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.92 }}
       transition={{ duration: 0.35, ease: 'easeInOut' }}
     >
-      <div className="pointer-events-auto h-36 w-36 sm:h-48 sm:w-48 lg:h-56 lg:w-56">
+      <div className="h-36 w-36 sm:h-48 sm:w-48 lg:h-[380px] lg:w-[380px]">
         {mounted && (
           <Suspense fallback={null}>
             <Globe
@@ -55,9 +55,12 @@ export function GlobeCompanion() {
               showGrid
               graticuleColor="#dbe6e0"
               scale={9}
-              speed={0}
-              dragSpeed={5}
-              stopOnHover
+              // Ambient spin, always on — rotateTo layers scroll-driven
+              // retargeting on top of it. No pointer interaction at all:
+              // this is a passive companion, not a toy.
+              speed={1.4}
+              interactive={false}
+              stopOnHover={false}
               // Mount-time pose only — every move after that goes through
               // rotateTo, so this must stay a constant, never `coord`.
               initialLatitude={CURITIBA.lat}
@@ -76,13 +79,13 @@ export function GlobeCompanion() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.3 }}
-            className="pointer-events-auto flex max-w-[13rem] flex-col items-center gap-0.5 rounded-xl border border-border bg-surface px-3 py-2 text-center shadow-sm"
+            className="flex max-w-[13rem] flex-col items-center gap-0.5 rounded-xl border border-border bg-surface px-3 py-2 text-center shadow-sm lg:max-w-[16rem] lg:px-4 lg:py-3"
           >
-            <span className="flex items-center gap-1 font-mono text-xs font-medium text-accent-strong">
+            <span className="flex items-center gap-1 font-mono text-xs font-medium text-accent-strong lg:text-sm">
               <MapPin size={12} />
               {t(`geoStops.${activeStopId}.place`)}
             </span>
-            <span className="text-[11px] leading-snug text-ink-muted">
+            <span className="text-[11px] leading-snug text-ink-muted lg:text-xs">
               {t(`geoStops.${activeStopId}.info`)}
             </span>
           </motion.div>

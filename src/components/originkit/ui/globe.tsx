@@ -187,6 +187,11 @@ interface GlobeProps {
     outlineWidth?: number;
     dragSpeed?: number;
     detail?: number;
+    /** false = purely passive: no drag-to-rotate, no pause-on-hover. The
+     *  globe only ever moves from `speed` (ambient spin) and `rotateTo`
+     *  (scroll-driven retargeting). Default true keeps the original
+     *  pointer-driven behavior. */
+    interactive?: boolean;
     style?: CSSProperties;
 }
 
@@ -220,6 +225,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
     outlineWidth = 1,
     dragSpeed = 5,
     detail = 5,
+    interactive = true,
     style,
 }: GlobeProps, ref) {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -916,7 +922,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
             document.addEventListener("mousemove", handleMouseMoveDrag);
             document.addEventListener("mouseup", handleMouseUp);
         };
-        canvas.addEventListener("mousedown", handleMouseDown);
+        if (interactive) canvas.addEventListener("mousedown", handleMouseDown);
 
         const raycaster = new Raycaster();
         const mouse = new Vector2();
@@ -929,7 +935,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
             const intersects = raycaster.intersectObject(oceanMesh);
             isHovering = intersects.length > 0;
         };
-        canvas.addEventListener("mousemove", handleMouseMove);
+        if (interactive) canvas.addEventListener("mousemove", handleMouseMove);
 
         const resizeObserver = new ResizeObserver(() => {
             const newWidth =
@@ -982,6 +988,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
         outlineWidth,
         dragSpeed,
         detail,
+        interactive,
         rotationSpeed,
         dotSpacing,
         dotSizeMultiplier,

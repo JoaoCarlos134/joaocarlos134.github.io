@@ -23,16 +23,20 @@ function App() {
     <>
       <Nav />
       <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Publications />
-        <Skills />
-        <Education />
+        <div className="mx-auto max-w-6xl px-5 lg:grid lg:grid-cols-[1fr_420px] lg:items-start lg:gap-16">
+          <div className="flex flex-col lg:min-w-0">
+            <Hero />
+            <About />
+            <Experience />
+            <Publications />
+            <Skills />
+            <Education />
+          </div>
+          <GlobeCompanion />
+        </div>
         <Contact />
       </main>
       <Footer />
-      <GlobeCompanion />
     </>
   )
 }

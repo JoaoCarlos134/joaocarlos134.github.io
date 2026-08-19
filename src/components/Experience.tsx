@@ -24,7 +24,7 @@ export function Experience() {
   const lineScale = useSpring(scrollYProgress, { stiffness: 80, damping: 20, restDelta: 0.001 })
 
   return (
-    <section id="experience" className="mx-auto max-w-3xl px-5 py-24">
+    <section id="experience" className="py-24">
       <ScrollReveal>
         <SectionHeading eyebrow="02" title={t('experience.heading')} />
       </ScrollReveal>

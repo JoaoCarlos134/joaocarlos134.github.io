@@ -13,7 +13,7 @@ export function Education() {
   const items = t('education.items', { returnObjects: true }) as EducationItem[]
 
   return (
-    <section id="education" className="mx-auto max-w-3xl px-5 py-24">
+    <section id="education" className="py-24">
       <ScrollReveal>
         <SectionHeading eyebrow="05" title={t('education.heading')} />
       </ScrollReveal>

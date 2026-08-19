@@ -13,7 +13,7 @@ export function Skills() {
   const groups = t('skills.groups', { returnObjects: true }) as SkillGroup[]
 
   return (
-    <section id="skills" className="mx-auto max-w-3xl px-5 py-24">
+    <section id="skills" className="py-24">
       <ScrollReveal>
         <SectionHeading eyebrow="04" title={t('skills.heading')} />
       </ScrollReveal>
