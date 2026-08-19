@@ -140,5 +140,12 @@
   },
   "footer": {
     "text": "Construído com React, Vite, Tailwind & Framer Motion."
+  },
+  "geoStops": {
+    "hero": { "place": "Curitiba, Brasil", "info": "UFPR & Institutos Lactec — base de tudo isso" },
+    "experience": { "place": "Curitiba, Brasil", "info": "LACTEC, Setor CFG — Bolsista de Pesquisa desde 2025" },
+    "publications-articles": { "place": "Basileia, Suíça", "info": "Energies (MDPI) — onde o artigo sobre detecção de sujidade foi publicado" },
+    "publications-patents": { "place": "Rio de Janeiro, Brasil", "info": "INPI — 5 sistemas de software registrados aqui" },
+    "education": { "place": "Curitiba, Brasil", "info": "UFPR — Engenharia Elétrica, em andamento" }
   }
 }

@@ -28,7 +28,7 @@ export function Publications() {
         <SectionHeading eyebrow="03" title={t('publications.heading')} />
       </ScrollReveal>
 
-      <div className="mt-10 flex flex-col gap-3">
+      <div id="publications-articles" className="mt-10 flex flex-col gap-3">
         <ScrollReveal>
           <h3 className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-ink-muted">
             <FileText size={14} /> {t('publications.articlesHeading')}
@@ -52,7 +52,7 @@ export function Publications() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col gap-3">
+      <div id="publications-patents" className="mt-10 flex flex-col gap-3">
         <ScrollReveal>
           <h3 className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-ink-muted">
             <ShieldCheck size={14} /> {t('publications.patentsHeading')}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState, type CSSProperties } from "react";
 import {
     Scene,
     PerspectiveCamera,
@@ -190,7 +190,17 @@ interface GlobeProps {
     style?: CSSProperties;
 }
 
-export default function Globe({
+/** Imperative handle so a scroll controller can retarget the camera without
+ *  tearing down and remounting the WebGL scene (which changing
+ *  initialLatitude/initialLongitude as props would do — they're effect deps,
+ *  so a new value refetches the world geometry and rebuilds everything). */
+export interface GlobeHandle {
+    /** Eases the globe to face this lat/lng, always spinning forward
+     *  (never backward) so repeated calls read as continuous motion. */
+    rotateTo: (lat: number, lng: number) => void;
+}
+
+const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe({
     speed = 2,
     smoothing = 8,
     dots = { color: "#ffffff", size: 5, density: 8, allDots: false },
@@ -211,10 +221,34 @@ export default function Globe({
     dragSpeed = 5,
     detail = 5,
     style,
-}: GlobeProps) {
+}: GlobeProps, ref) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    // Lives outside the mount effect so `rotateTo` can reach it; the effect
+    // below reuses this same object instead of a local variable so both
+    // sides mutate the one the render loop actually reads.
+    const targetRotationRef = useRef({ x: 0, y: 0 });
+    const startAnimationRef = useRef<() => void>(() => {});
+
+    useImperativeHandle(ref, () => ({
+        rotateTo(lat: number, lng: number) {
+            const targetLngRad = (lng * Math.PI) / 180;
+            const targetLatRad = Math.max(
+                -Math.PI / 2,
+                Math.min(Math.PI / 2, (lat * Math.PI) / 180)
+            );
+            const cur = targetRotationRef.current;
+            const twoPi = Math.PI * 2;
+            // Shortest forward-only turn to the target longitude, plus one
+            // full extra spin so the motion is always visible as a "spin
+            // then land" rather than a tiny nudge when already close.
+            const forwardDelta = ((targetLngRad - cur.x) % twoPi + twoPi) % twoPi;
+            cur.x = cur.x + forwardDelta + twoPi;
+            cur.y = targetLatRad;
+            startAnimationRef.current();
+        },
+    }), []);
 
     const dotColor = dots.color;
     const dotSize = dots.size;
@@ -752,10 +786,12 @@ export default function Globe({
         const initialLongitudeRad = (initialLongitude * Math.PI) / 180;
         const initialLatitudeRad = (initialLatitude * Math.PI) / 180;
         const rotation = { x: initialLongitudeRad, y: initialLatitudeRad };
-        const targetRotation = {
-            x: initialLongitudeRad,
-            y: initialLatitudeRad,
-        };
+        // Reuse the same object `rotateTo` writes to, seeded to the initial
+        // pose, so an external call before or after this effect settles
+        // still lands on the render loop's actual target.
+        targetRotationRef.current.x = initialLongitudeRad;
+        targetRotationRef.current.y = initialLatitudeRad;
+        const targetRotation = targetRotationRef.current;
         const velocity = { x: 0, y: 0 };
         let isDragging = false;
         let isHovering = false;
@@ -845,6 +881,7 @@ export default function Globe({
                 animationFrameId = requestAnimationFrame(animate);
             }
         };
+        startAnimationRef.current = startAnimation;
         if (rotationSpeed !== 0) {
             startAnimation();
         }
@@ -914,6 +951,7 @@ export default function Globe({
         return () => {
             if (animationFrameId !== null)
                 cancelAnimationFrame(animationFrameId);
+            startAnimationRef.current = () => {};
             canvas.removeEventListener("mousedown", handleMouseDown);
             canvas.removeEventListener("mousemove", handleMouseMove);
             resizeObserver.disconnect();
@@ -994,4 +1032,6 @@ export default function Globe({
     }
 
     return <div ref={containerRef} style={containerStyle} />;
-}
+});
+
+export default Globe;
