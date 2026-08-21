@@ -12,18 +12,20 @@
  */
 export const KEYCAP_CAMERA = { tilt: 20, rotate: 0 }
 
+/** The label inherits page font size otherwise; nudged down with the padding
+ *  so the cap shrinks proportionally instead of just losing its margins. */
+const KEYCAP_FONT = { fontSize: '15px' }
+const KEYCAP_PADDING = '14px 26px'
+const KEYCAP_SHAPE = { rounded: 100, padding: KEYCAP_PADDING, camera: KEYCAP_CAMERA, font: KEYCAP_FONT }
+
 export const KEYCAP_PRIMARY = {
-  rounded: 100,
-  padding: '18px 30px',
-  camera: KEYCAP_CAMERA,
+  ...KEYCAP_SHAPE,
   colors: { fill: '#17211c', textColor: '#dcede7', hoverTextColor: '#ffffff' },
-  prism: { color: '#2f7d6b', float: 7, hoverFloat: 5, intensity: 100, thickness: 12 },
+  prism: { color: '#2f7d6b', float: 6, hoverFloat: 4, intensity: 100, thickness: 10 },
 } as const
 
 export const KEYCAP_SECONDARY = {
-  rounded: 100,
-  padding: '18px 30px',
-  camera: KEYCAP_CAMERA,
+  ...KEYCAP_SHAPE,
   colors: { fill: '#17211c', textColor: '#9ba89f', hoverTextColor: '#ffffff' },
-  prism: { color: '#57685f', float: 7, hoverFloat: 5, intensity: 80, thickness: 12 },
+  prism: { color: '#57685f', float: 6, hoverFloat: 4, intensity: 80, thickness: 10 },
 } as const

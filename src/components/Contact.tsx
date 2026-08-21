@@ -22,7 +22,7 @@ export function Contact() {
         <SectionHeading eyebrow="06" title={t('contact.heading')} />
         <p className="mt-4 max-w-lg text-ink-muted">{t('contact.body')}</p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+        <div className="mt-8 flex flex-wrap items-center gap-8">
           <IsometricButton
             {...KEYCAP_PRIMARY}
             label={copied ? t('contact.copied') : email}

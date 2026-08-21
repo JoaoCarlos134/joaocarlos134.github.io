@@ -82,7 +82,9 @@ export function Hero() {
           {t('hero.tagline')}
         </motion.p>
 
-        <motion.div variants={item} className="mt-3 flex flex-wrap items-center gap-4">
+        {/* Wide gap on purpose: each cap throws a glow well past its own box,
+            so a tight gap made two neighbouring glows bleed into each other. */}
+        <motion.div variants={item} className="mt-4 flex flex-wrap items-center gap-8">
           <IsometricButton {...KEYCAP_PRIMARY} label={t('hero.ctaContact')} link="#contact" />
           <IsometricButton {...KEYCAP_SECONDARY} label={t('hero.ctaResume')} link="/resume.pdf" newTab />
         </motion.div>
