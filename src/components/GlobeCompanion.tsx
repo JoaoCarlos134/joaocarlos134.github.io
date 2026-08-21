@@ -41,7 +41,7 @@ export function GlobeCompanion() {
       animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.92 }}
       transition={{ duration: 0.35, ease: 'easeInOut' }}
     >
-      <div className="h-36 w-36 sm:h-48 sm:w-48 lg:h-[380px] lg:w-[380px]">
+      <div className="h-36 w-36 sm:h-48 sm:w-48 lg:h-[500px] lg:w-[500px]">
         {mounted && (
           <Suspense fallback={null}>
             <Globe
@@ -82,7 +82,7 @@ export function GlobeCompanion() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.3 }}
-            className="flex max-w-[13rem] flex-col items-center gap-0.5 rounded-xl border border-border bg-surface px-3 py-2 text-center shadow-sm lg:max-w-[16rem] lg:px-4 lg:py-3"
+            className="flex max-w-[13rem] flex-col items-center gap-0.5 rounded-xl border border-border bg-surface px-3 py-2 text-center shadow-sm lg:max-w-[19rem] lg:px-4 lg:py-3"
           >
             <span className="flex items-center gap-1 font-mono text-xs font-medium text-accent-strong lg:text-sm">
               <MapPin size={12} />

@@ -21,8 +21,12 @@ export function Hero() {
   const { t } = useTranslation()
   const reduceMotion = useReducedMotion()
 
+  // No overflow-hidden on the section: the keycap buttons throw a glow ~50px
+  // past their own box, and the first one sits flush against this column's
+  // left edge — clipping here sliced that shadow off in mid-air. Bleed is
+  // caught at the viewport instead (see `overflow-x: clip` on body).
   return (
-    <section id="hero" className="relative overflow-hidden pb-20 pt-32 lg:pt-40">
+    <section id="hero" className="relative pb-20 pt-32 lg:pt-40">
       <motion.div
         variants={reduceMotion ? undefined : container}
         initial={reduceMotion ? undefined : 'hidden'}
@@ -37,26 +41,37 @@ export function Hero() {
           {t('hero.greeting')}
         </motion.p>
 
-        <motion.div variants={item} className="h-20 w-full max-w-md sm:h-24" aria-hidden="true">
+        {/* autoFit scales the text to ~92% of this box, so the box is what
+            sets the visual size — fontSize is only the upper bound it may
+            grow to. */}
+        <motion.div variants={item} className="h-28 w-full max-w-xl sm:h-32 lg:h-36" aria-hidden="true">
           <PixelDrift
             text={t('hero.shortName')}
             colors={NAME_COLORS}
             mode="onEnter"
             replay={false}
             position="middle"
-            particleSize={10}
-            particleCount={40}
+            // Sampling gap is round(150 / particleCount) px, floored at 2, and
+            // particleCount is clamped to 50 — so 50 is the densest the
+            // component allows (a 3px grid, down from 4px at the old 40).
+            particleSize={9}
+            particleCount={50}
             mouseEnabled
             mouseRadius={45}
             mouseForce={20}
-            fontSize={56}
+            fontSize={96}
             autoFit
             transition={NAME_TRANSITION}
             style={NAME_STYLE}
           />
         </motion.div>
 
-        <motion.p variants={item} className="text-lg font-medium text-accent-strong sm:text-xl">
+        {/* balance: the wider globe column narrowed this one enough that the
+            role wraps, and it was orphaning the last word onto its own line. */}
+        <motion.p
+          variants={item}
+          className="text-balance text-lg font-medium text-accent-strong sm:text-xl"
+        >
           {t('hero.role')}
         </motion.p>
         <motion.p variants={item} className="max-w-md text-base leading-relaxed text-ink-muted">

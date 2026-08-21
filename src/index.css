@@ -50,6 +50,11 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  /* `clip`, deliberately not `hidden`: hidden would make body a scroll
+     container, which re-anchors the sticky globe to it instead of the
+     viewport. This only stops decorative bleed (keycap glow) from adding a
+     horizontal scrollbar on narrow screens. */
+  overflow-x: clip;
 }
 
 ::selection {

@@ -38,7 +38,7 @@ function App() {
     <>
       <Nav />
       <main>
-        <div className="mx-auto max-w-6xl px-5 lg:grid lg:grid-cols-[1fr_420px] lg:items-start lg:gap-16">
+        <div className="mx-auto max-w-6xl px-5 lg:grid lg:grid-cols-[1fr_500px] lg:items-start lg:gap-12">
           <div className="flex flex-col lg:min-w-0">
             <Hero />
             <About />
