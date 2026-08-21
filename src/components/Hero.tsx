@@ -2,8 +2,12 @@ import { useTranslation } from 'react-i18next'
 import { motion, useReducedMotion } from 'framer-motion'
 import PixelDrift from '@/components/originkit/ui/pixeldrift'
 import IsometricButton from '@/components/originkit/ui/keycap-button'
+import { KEYCAP_PRIMARY, KEYCAP_SECONDARY } from '../lib/keycap'
 
-const NAME_COLORS = ['#2f7d6b', '#1f5a4c', '#7fa89c']
+// One entry, not three: the component buckets particles by colour, so a single
+// value paints every pixel the same. This is the page's ink rather than pure
+// #000 — the same near-black every other line of text on the site uses.
+const NAME_COLORS = ['#17211c']
 const NAME_TRANSITION = { type: 'tween' as const, duration: 1.2, ease: 'easeOut' }
 const NAME_STYLE = { width: '100%', height: '100%', minWidth: 0, minHeight: 0 }
 
@@ -79,23 +83,8 @@ export function Hero() {
         </motion.p>
 
         <motion.div variants={item} className="mt-3 flex flex-wrap items-center gap-4">
-          <IsometricButton
-            label={t('hero.ctaContact')}
-            link="#contact"
-            rounded={100}
-            padding="18px 30px"
-            colors={{ fill: '#17211c', textColor: '#dcede7', hoverTextColor: '#ffffff' }}
-            prism={{ color: '#2f7d6b', float: 7, hoverFloat: 5, intensity: 100, thickness: 12 }}
-          />
-          <IsometricButton
-            label={t('hero.ctaResume')}
-            link="/resume.pdf"
-            newTab
-            rounded={100}
-            padding="18px 30px"
-            colors={{ fill: '#17211c', textColor: '#9ba89f', hoverTextColor: '#ffffff' }}
-            prism={{ color: '#57685f', float: 7, hoverFloat: 5, intensity: 80, thickness: 12 }}
-          />
+          <IsometricButton {...KEYCAP_PRIMARY} label={t('hero.ctaContact')} link="#contact" />
+          <IsometricButton {...KEYCAP_SECONDARY} label={t('hero.ctaResume')} link="/resume.pdf" newTab />
         </motion.div>
       </motion.div>
     </section>

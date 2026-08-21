@@ -100,15 +100,27 @@
     "groups": [
       {
         "category": "Pesquisa & Domínio",
-        "items": ["Machine Learning", "Previsão de Séries Temporais", "Sistemas Fotovoltaicos", "Sistemas Elétricos e de Energia", "Microeletrônica — Projeto"]
+        "items": [
+          "Machine Learning",
+          "Previsão de Séries Temporais",
+          "Sistemas Fotovoltaicos",
+          "Sistemas Elétricos e de Energia",
+          "Microeletrônica — Projeto"
+        ]
       },
       {
         "category": "Programação & Ferramentas",
-        "items": ["TODO — ex. Python, PyTorch, MATLAB..."]
+        "items": [
+          "TODO — ex. Python, PyTorch, MATLAB..."
+        ]
       },
       {
         "category": "Idiomas",
-        "items": ["Português — nativo", "Inglês — proficiência profissional", "Alemão — básico"]
+        "items": [
+          "Português — nativo",
+          "Inglês — proficiência profissional",
+          "Alemão — básico"
+        ]
       }
     ]
   },
@@ -137,16 +149,32 @@
     "body": "Interessado em colaborações de pesquisa, projetos de sistemas de energia ou trabalhos com machine learning — entre em contato.",
     "email": "TODO voce@example.com",
     "linkedin": "TODO",
-    "github": "https://github.com/JoaoCarlos134"
+    "github": "https://github.com/JoaoCarlos134",
+    "copied": "Copiado!"
   },
   "footer": {
     "text": "Construído com React, Vite, Tailwind & Framer Motion."
   },
   "geoStops": {
-    "hero": { "place": "Curitiba, Brasil", "info": "UFPR & Institutos Lactec — base de tudo isso" },
-    "experience": { "place": "Curitiba, Brasil", "info": "LACTEC, Setor CFG — Bolsista de Pesquisa desde 2025" },
-    "publications-articles": { "place": "Basileia, Suíça", "info": "Energies (MDPI) — onde o artigo sobre detecção de sujidade foi publicado" },
-    "publications-patents": { "place": "Rio de Janeiro, Brasil", "info": "INPI — 5 sistemas de software registrados aqui" },
-    "education": { "place": "Curitiba, Brasil", "info": "UFPR — Engenharia Elétrica, em andamento" }
+    "hero": {
+      "place": "Curitiba, Brasil",
+      "info": "UFPR & Institutos Lactec — base de tudo isso"
+    },
+    "experience": {
+      "place": "Curitiba, Brasil",
+      "info": "LACTEC, Setor CFG — Bolsista de Pesquisa desde 2025"
+    },
+    "publications-articles": {
+      "place": "Basileia, Suíça",
+      "info": "Energies (MDPI) — onde o artigo sobre detecção de sujidade foi publicado"
+    },
+    "publications-patents": {
+      "place": "Rio de Janeiro, Brasil",
+      "info": "INPI — 5 sistemas de software registrados aqui"
+    },
+    "education": {
+      "place": "Curitiba, Brasil",
+      "info": "UFPR — Engenharia Elétrica, em andamento"
+    }
   }
 }

@@ -100,15 +100,27 @@
     "groups": [
       {
         "category": "Research & Domain",
-        "items": ["Machine Learning", "Time Series Forecasting", "Photovoltaic Systems", "Electrical & Energy Systems", "Microelectronics — Project"]
+        "items": [
+          "Machine Learning",
+          "Time Series Forecasting",
+          "Photovoltaic Systems",
+          "Electrical & Energy Systems",
+          "Microelectronics — Project"
+        ]
       },
       {
         "category": "Programming & Tools",
-        "items": ["TODO — e.g. Python, PyTorch, MATLAB..."]
+        "items": [
+          "TODO — e.g. Python, PyTorch, MATLAB..."
+        ]
       },
       {
         "category": "Languages",
-        "items": ["Portuguese — native", "English — professional working proficiency", "German — elementary"]
+        "items": [
+          "Portuguese — native",
+          "English — professional working proficiency",
+          "German — elementary"
+        ]
       }
     ]
   },
@@ -137,16 +149,32 @@
     "body": "Interested in research collaborations, energy-systems projects, or machine learning work — reach out.",
     "email": "TODO you@example.com",
     "linkedin": "TODO",
-    "github": "https://github.com/JoaoCarlos134"
+    "github": "https://github.com/JoaoCarlos134",
+    "copied": "Copied!"
   },
   "footer": {
     "text": "Built with React, Vite, Tailwind & Framer Motion."
   },
   "geoStops": {
-    "hero": { "place": "Curitiba, Brazil", "info": "UFPR & Institutos Lactec — home base for this work" },
-    "experience": { "place": "Curitiba, Brazil", "info": "LACTEC, CFG Sector — Research Scholar since 2025" },
-    "publications-articles": { "place": "Basel, Switzerland", "info": "Energies (MDPI) — where the soiling-detection paper was published" },
-    "publications-patents": { "place": "Rio de Janeiro, Brazil", "info": "INPI — 5 software systems registered here" },
-    "education": { "place": "Curitiba, Brazil", "info": "UFPR — B.Eng. Electrical Engineering, in progress" }
+    "hero": {
+      "place": "Curitiba, Brazil",
+      "info": "UFPR & Institutos Lactec — home base for this work"
+    },
+    "experience": {
+      "place": "Curitiba, Brazil",
+      "info": "LACTEC, CFG Sector — Research Scholar since 2025"
+    },
+    "publications-articles": {
+      "place": "Basel, Switzerland",
+      "info": "Energies (MDPI) — where the soiling-detection paper was published"
+    },
+    "publications-patents": {
+      "place": "Rio de Janeiro, Brazil",
+      "info": "INPI — 5 software systems registered here"
+    },
+    "education": {
+      "place": "Curitiba, Brazil",
+      "info": "UFPR — B.Eng. Electrical Engineering, in progress"
+    }
   }
 }

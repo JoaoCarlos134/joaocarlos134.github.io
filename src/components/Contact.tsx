@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Check, Copy } from 'lucide-react'
 import { ScrollReveal } from './ScrollReveal'
 import { SectionHeading } from './SectionHeading'
-import { GithubIcon, LinkedinIcon } from './icons'
+import IsometricButton from '@/components/originkit/ui/keycap-button'
+import { KEYCAP_PRIMARY, KEYCAP_SECONDARY } from '../lib/keycap'
 
 export function Contact() {
   const { t } = useTranslation()
@@ -22,30 +22,21 @@ export function Contact() {
         <SectionHeading eyebrow="06" title={t('contact.heading')} />
         <p className="mt-4 max-w-lg text-ink-muted">{t('contact.body')}</p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <button
-            type="button"
+        <div className="mt-8 flex flex-wrap items-center gap-4">
+          <IsometricButton
+            {...KEYCAP_PRIMARY}
+            label={copied ? t('contact.copied') : email}
             onClick={copyEmail}
-            className="flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast transition-transform hover:scale-105"
-          >
-            {copied ? <Check size={16} /> : <Copy size={16} />}
-            {email}
-          </button>
-          <a
-            href={t('contact.linkedin')}
-            className="rounded-full border border-border p-2.5 text-ink-muted transition-colors hover:border-accent hover:text-accent-strong"
-            aria-label="LinkedIn"
-          >
-            <LinkedinIcon size={18} />
-          </a>
-          <a
-            href={t('contact.github')}
-            className="rounded-full border border-border p-2.5 text-ink-muted transition-colors hover:border-accent hover:text-accent-strong"
-            aria-label="GitHub"
-          >
-            <GithubIcon size={18} />
-          </a>
+          />
+          <IsometricButton {...KEYCAP_SECONDARY} label="LinkedIn" link={t('contact.linkedin')} newTab />
+          <IsometricButton {...KEYCAP_SECONDARY} label="GitHub" link={t('contact.github')} newTab />
         </div>
+
+        {/* The keycap's label lives on a canvas-like 3D face, so the copy
+            confirmation is announced here instead of relying on the swap. */}
+        <p aria-live="polite" className="sr-only">
+          {copied ? t('contact.copied') : ''}
+        </p>
       </ScrollReveal>
     </section>
   )

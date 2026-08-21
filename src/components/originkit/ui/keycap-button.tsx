@@ -209,6 +209,10 @@ export interface IsometricButtonProps {
     link?: string
     transition?: Transition
     newTab?: boolean
+    /** Added on top of the vendored component: without this the button could
+     *  only ever be a link, so an in-page action (copy to clipboard) had no
+     *  way to hook the real <button> that sits under the prism. */
+    onClick?: React.MouseEventHandler<HTMLElement>
     style?: React.CSSProperties
 }
 
@@ -231,6 +235,7 @@ export default function IsometricButton(props: IsometricButtonProps) {
         link,
         transition = { mass: 1, type: "spring", damping: 14, stiffness: 260 },
         newTab = true,
+        onClick,
         style,
     } = props
 
@@ -714,6 +719,7 @@ export default function IsometricButton(props: IsometricButtonProps) {
             <Hit
                 {...hitProps}
                 aria-label={showText ? label : label || undefined}
+                onClick={onClick}
                 onPointerEnter={onEnter}
                 onPointerLeave={onLeave}
                 onPointerDown={onDown}
