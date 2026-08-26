@@ -30,6 +30,7 @@ export function Contact() {
           />
           <IsometricButton {...KEYCAP_SECONDARY} label="LinkedIn" link={t('contact.linkedin')} newTab />
           <IsometricButton {...KEYCAP_SECONDARY} label="GitHub" link={t('contact.github')} newTab />
+          <IsometricButton {...KEYCAP_SECONDARY} label="Lattes" link={t('contact.lattes')} newTab />
         </div>
 
         {/* The keycap's label lives on a canvas-like 3D face, so the copy

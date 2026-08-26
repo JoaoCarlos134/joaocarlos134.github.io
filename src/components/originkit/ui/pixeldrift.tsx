@@ -113,6 +113,7 @@ export default function ParticleText(props: Props) {
         mode,
         replay,
         position,
+        align,
         particleSize,
         particleCount,
         mouseEnabled,
@@ -237,9 +238,10 @@ export default function ParticleText(props: Props) {
             offCtx.clearRect(0, 0, W, H)
             offCtx.fillStyle = "#fff"
             offCtx.font = `700 ${effectiveSize}px ${fontFamily}`
-            offCtx.textAlign = "center"
+            offCtx.textAlign = align === "left" ? "left" : align === "right" ? "right" : "center"
             offCtx.textBaseline = "middle"
-            offCtx.fillText(text || "", W / 2, H / 2)
+            const textX = align === "left" ? (W - maxW) / 2 : align === "right" ? W - (W - maxW) / 2 : W / 2
+            offCtx.fillText(text || "", textX, H / 2)
 
             const img = offCtx.getImageData(
                 0,
@@ -712,6 +714,7 @@ export default function ParticleText(props: Props) {
         mode,
         replay,
         position,
+        align,
         text,
         colorsKey,
         particleSize,
@@ -761,6 +764,7 @@ type Props = {
     mode: "onEnter" | "onHover"
     replay: boolean
     position: "above" | "middle" | "below"
+    align: "left" | "center" | "right"
     particleSize: number
     particleCount: number
     mouseEnabled: boolean
@@ -778,6 +782,7 @@ const COMPONENT_DEFAULTS = {
     mode: "onEnter",
     replay: true,
     position: "above",
+    align: "center",
     particleSize: 12,
     particleCount: 50,
     mouseEnabled: true,

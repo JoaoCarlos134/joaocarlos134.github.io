@@ -55,10 +55,14 @@ export function Hero() {
             mode="onEnter"
             replay={false}
             position="middle"
+            align="left"
             // Sampling gap is round(150 / particleCount) px, floored at 2, and
             // particleCount is clamped to 50 — so 50 is the densest the
             // component allows (a 3px grid, down from 4px at the old 40).
-            particleSize={9}
+            // particleSize sets the drawn square (particleSize / 4 px), bumped
+            // so neighboring squares overlap the sampling gap instead of
+            // leaving visible gaps between them.
+            particleSize={11}
             particleCount={50}
             mouseEnabled
             mouseRadius={45}

@@ -42,12 +42,13 @@ export function Nav() {
 
   const setLang = (lng: 'en' | 'pt') => i18n.changeLanguage(lng)
 
-  // Tinted rather than the page's own near-white, which left the bar reading
-  // as part of the page instead of sitting on top of it.
+  // Same fill as the keycap buttons (--ink, #17211c) rather than the page's
+  // own near-white, so the bar reads as one more piece of the same UI instead
+  // of a separate light strip sitting on top of it.
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-accent/15 bg-accent-soft/90 backdrop-blur-md">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-ink/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
-        <a href="#hero" className="font-mono text-sm font-medium tracking-tight text-ink">
+        <a href="#hero" className="font-mono text-sm font-medium tracking-tight text-accent-soft">
           {t('hero.name')}
         </a>
 
@@ -57,11 +58,9 @@ export function Nav() {
               key={id}
               href={`#${id}`}
               className={`rounded-full px-3 py-1.5 text-sm transition-colors ${
-                // The old active pill was bg-accent-soft, which is now the bar
-                // itself — it would have disappeared against it.
                 active === id
                   ? 'bg-surface text-accent-strong shadow-sm'
-                  : 'text-ink-muted hover:text-ink'
+                  : 'text-accent-soft/60 hover:text-accent-soft'
               }`}
             >
               {t(`nav.${id}`)}
@@ -70,14 +69,16 @@ export function Nav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center rounded-full border border-accent/25 p-0.5 font-mono text-xs">
+          <div className="flex items-center rounded-full border border-accent-soft/25 p-0.5 font-mono text-xs">
             {(['pt', 'en'] as const).map((lng) => (
               <button
                 key={lng}
                 type="button"
                 onClick={() => setLang(lng)}
                 className={`rounded-full px-2 py-1 uppercase transition-colors ${
-                  i18n.language.startsWith(lng) ? 'bg-accent text-accent-contrast' : 'text-ink-muted hover:text-ink'
+                  i18n.language.startsWith(lng)
+                    ? 'bg-accent text-accent-contrast'
+                    : 'text-accent-soft/60 hover:text-accent-soft'
                 }`}
                 aria-pressed={i18n.language.startsWith(lng)}
               >
@@ -89,7 +90,7 @@ export function Nav() {
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            className="rounded-full border border-accent/25 p-2 text-ink-muted hover:text-ink md:hidden"
+            className="rounded-full border border-accent-soft/25 p-2 text-accent-soft/60 hover:text-accent-soft md:hidden"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X size={16} /> : <Menu size={16} />}
@@ -104,7 +105,7 @@ export function Nav() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="overflow-hidden border-t border-accent/15 md:hidden"
+            className="overflow-hidden border-t border-white/10 md:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-3">
               {SECTION_IDS.map((id) => (
@@ -112,7 +113,7 @@ export function Nav() {
                   key={id}
                   href={`#${id}`}
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-lg px-3 py-2 text-sm text-ink-muted hover:bg-surface hover:text-ink"
+                  className="rounded-lg px-3 py-2 text-sm text-accent-soft/60 hover:bg-white/5 hover:text-accent-soft"
                 >
                   {t(`nav.${id}`)}
                 </a>

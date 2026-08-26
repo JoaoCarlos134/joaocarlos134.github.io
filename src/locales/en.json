@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "João Carlos Jachenski Junior — Portfolio",
+    "title": "João Carlos Jachenski Junior: Portfolio",
     "description": "Electrical Engineering student and machine learning research scholar at LACTEC, working on photovoltaic monitoring and energy forecasting."
   },
   "nav": {
@@ -16,30 +16,30 @@
     "name": "João Carlos Jachenski Junior",
     "shortName": "João Carlos",
     "role": "Electrical Engineering Student & ML Research Scholar",
-    "tagline": "Researching machine learning for photovoltaic and energy systems at LACTEC — from soiling detection to demand forecasting.",
+    "tagline": "Researching machine learning for photovoltaic and energy systems at LACTEC, from soiling detection to demand forecasting.",
     "ctaContact": "Get in touch",
     "ctaResume": "Download CV"
   },
   "about": {
     "heading": "About",
-    "body": "I'm an Electrical Engineering student at the Federal University of Paraná (UFPR), with a technical background in Information Technology from TECPUC. I work as a research scholar at LACTEC (Laboratory of Analysis and Technological Science), on the CFG team, developing machine learning solutions for electrical and photovoltaic systems — from soiling detection to energy demand forecasting."
+    "body": "I'm an Electrical Engineering student at the Federal University of Paraná (UFPR), with a technical background in Information Technology from TECPUC. I work as a research scholar at LACTEC (Laboratory of Analysis and Technological Science), on the CFG team, developing machine learning solutions for electrical and photovoltaic systems, from soiling detection to energy demand forecasting."
   },
   "experience": {
     "heading": "Experience",
     "items": [
       {
         "role": "Research Scholar (Bolsista)",
-        "company": "Institutos Lactec — CFG Sector",
-        "period": "2025 — Present",
+        "company": "Institutos Lactec (CFG Sector)",
+        "period": "2025 to Present",
         "bullets": [
           "Develop machine learning models for photovoltaic monitoring and electrical demand forecasting, contributing to 5 INPI-registered software systems and 2 peer-reviewed publications.",
-          "Work across the full pipeline — from weather and sensor data processing to deployable soiling-detection and load-forecasting models for residential and utility-scale systems."
+          "Work across the full pipeline, from weather and sensor data processing to deployable soiling-detection and load-forecasting models for residential and utility-scale systems."
         ]
       },
       {
         "role": "Research Team Member",
-        "company": "Rede Agrointeligente — funded by ABPI",
-        "period": "2025 — Present",
+        "company": "Rede Agrointeligente (funded by ABPI)",
+        "period": "2025 to Present",
         "bullets": [
           "Contribute to a research project developing renewable generation and energy storage solutions for irrigated agriculture, aiming to cut costs and carbon emissions in rural power systems.",
           "Part of a multi-institution team coordinated by Bruno Knevitz Hammerschmitt, alongside researchers from LACTEC."
@@ -89,7 +89,7 @@
         "date": "Feb 2026"
       },
       {
-        "title": "PivotEnergy — System for Estimating Electric Load Profiles in Center-Pivot Irrigation",
+        "title": "PivotEnergy: System for Estimating Electric Load Profiles in Center-Pivot Irrigation",
         "registry": "BR512026006223-3",
         "date": "Jun 2026"
       }
@@ -105,21 +105,30 @@
           "Time Series Forecasting",
           "Photovoltaic Systems",
           "Electrical & Energy Systems",
-          "Microelectronics — Project"
+          "Microelectronics Project"
         ]
       },
       {
         "category": "Programming & Tools",
         "items": [
-          "TODO — e.g. Python, PyTorch, MATLAB..."
+          "Python",
+          "scikit-learn",
+          "pandas / NumPy",
+          "TensorFlow / Keras",
+          "JavaScript",
+          "HTML",
+          "C++",
+          "Excel",
+          "AutoCAD",
+          "Cadence"
         ]
       },
       {
         "category": "Languages",
         "items": [
-          "Portuguese — native",
-          "English — professional working proficiency",
-          "German — elementary"
+          "Portuguese (native)",
+          "English (advanced)",
+          "German (intermediate)"
         ]
       }
     ]
@@ -130,26 +139,32 @@
       {
         "title": "B.Eng. in Electrical Engineering (in progress)",
         "org": "Universidade Federal do Paraná (UFPR)",
-        "period": "2023 — Present"
+        "period": "2023 to Present"
       },
       {
         "title": "Technical Diploma in Information Technology (integrated with high school)",
-        "org": "TECPUC — Centro de Educação Profissional Irmão Mário Cristóvão",
-        "period": "2020 — 2022"
+        "org": "TECPUC (Centro de Educação Profissional Irmão Mário Cristóvão)",
+        "period": "2020 to 2022"
       },
       {
         "title": "English Course (224h)",
         "org": "INFLUX English School",
-        "period": "2016 — 2019"
+        "period": "2016 to 2019"
+      },
+      {
+        "title": "German Course",
+        "org": "Deutsch Haus",
+        "period": "Since 2023"
       }
     ]
   },
   "contact": {
     "heading": "Let's talk",
-    "body": "Interested in research collaborations, energy-systems projects, or machine learning work — reach out.",
-    "email": "TODO you@example.com",
+    "body": "Interested in research collaborations, energy-systems projects, or machine learning work, reach out.",
+    "email": "joaojachenskijunior@gmail.com",
     "linkedin": "TODO",
     "github": "https://github.com/JoaoCarlos134",
+    "lattes": "http://lattes.cnpq.br/6793617796159154",
     "copied": "Copied!"
   },
   "footer": {
@@ -158,23 +173,23 @@
   "geoStops": {
     "hero": {
       "place": "Curitiba, Brazil",
-      "info": "UFPR & Institutos Lactec — home base for this work"
+      "info": "UFPR & Institutos Lactec, home base for this work"
     },
     "experience": {
       "place": "Curitiba, Brazil",
-      "info": "LACTEC, CFG Sector — Research Scholar since 2025"
+      "info": "LACTEC, CFG Sector (Research Scholar since 2025)"
     },
     "publications-articles": {
       "place": "Basel, Switzerland",
-      "info": "Energies (MDPI) — where the soiling-detection paper was published"
+      "info": "Energies (MDPI), where the soiling-detection paper was published"
     },
     "publications-patents": {
       "place": "Rio de Janeiro, Brazil",
-      "info": "INPI — 5 software systems registered here"
+      "info": "INPI: 5 software systems registered here"
     },
     "education": {
       "place": "Curitiba, Brazil",
-      "info": "UFPR — B.Eng. Electrical Engineering, in progress"
+      "info": "UFPR: B.Eng. Electrical Engineering, in progress"
     }
   }
 }
