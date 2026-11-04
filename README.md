@@ -1,12 +1,15 @@
-# Portfolio / CV site
+# joaocarlos134.github.io
 
-Bilingual (PT/EN), animated résumé site. React + Vite + TypeScript + Tailwind CSS v4 + Framer Motion, deployed to GitHub Pages via GitHub Actions.
+[![Deploy](https://github.com/JoaoCarlos134/joaocarlos134.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/JoaoCarlos134/joaocarlos134.github.io/actions/workflows/deploy.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+My bilingual (PT/EN), animated résumé site, live at **[joaocarlos134.github.io](https://joaocarlos134.github.io/)**. React + Vite + TypeScript + Tailwind CSS v4 + Framer Motion, deployed to GitHub Pages via GitHub Actions.
 
 ## Working on this from any machine
 
 ```bash
-git clone <this-repo-url>
-cd 1git_profile
+git clone https://github.com/JoaoCarlos134/joaocarlos134.github.io.git
+cd joaocarlos134.github.io
 npm install
 npm run dev
 ```
@@ -21,9 +24,12 @@ npm run lint       # oxlint
 
 ## Where the content lives
 
-All page copy is in `src/locales/en.json` and `src/locales/pt.json`, mirrored key-for-key. **Everything marked `TODO` still needs your real content** — name, role, tagline, experience, skills, projects, education, contact info. Edit both files together so the two languages never drift apart.
+All page copy is in `src/locales/en.json` and `src/locales/pt.json`, mirrored key-for-key. Edit both files together so the two languages never drift apart. Projects shown on the page are listed in `src/lib/projects.ts`, with their copy under `projects.items.<id>` in both locale files.
 
-Also add your résumé PDF at `public/resume.pdf` — the hero's "Download CV" button links to `/resume.pdf`.
+Two things are still pending, and both stay hidden until they exist instead of shipping as broken links:
+
+- `contact.linkedin` is `TODO`; `Contact.tsx` only renders profile links that are real URLs.
+- The hero's CV button links to `/resume.pdf`. `vite.config.ts` checks for `public/resume.pdf` at build time and the button appears once the file is there.
 
 ## Structure
 
@@ -49,7 +55,11 @@ Push to `main` — `.github/workflows/deploy.yml` builds and deploys to GitHub P
 
 This repo is set up as a **user page** (`vite.config.ts` has `base: '/'`): [github.com/JoaoCarlos134/joaocarlos134.github.io](https://github.com/JoaoCarlos134/joaocarlos134.github.io), served at `https://joaocarlos134.github.io/`. If you ever fork this into a differently-named repo (a project page), change `base` in `vite.config.ts` to `'/<repo-name>/'`.
 
-## Notes for this machine / a new machine
+## Notes
 
 - Requires Node 20+.
-- If `npm install` fails with `SELF_SIGNED_CERT_IN_CHAIN`, the machine is behind a TLS-inspecting corporate proxy (e.g. Kaspersky Endpoint Security). Fix: export that root CA and run `npm config set cafile <path-to-cert>.pem` — see git history / ask for the steps used on the original machine.
+- If `npm install` fails with `SELF_SIGNED_CERT_IN_CHAIN`, the machine is behind a TLS-inspecting proxy. Export its root CA and run `npm config set cafile <path-to-cert>.pem`.
+
+## License
+
+The code is [MIT](LICENSE). The components in `src/components/originkit/` are vendored from [Originkit](https://www.originkit.dev/) and keep their own notices; `public/geo/ne_110m_land.json` is [Natural Earth](https://www.naturalearthdata.com/) data, public domain. The written content (`src/locales/`) is my own CV: reuse the code, not the biography.

@@ -90,7 +90,9 @@ export function Hero() {
             so a tight gap made two neighbouring glows bleed into each other. */}
         <motion.div variants={item} className="mt-4 flex flex-wrap items-center gap-8">
           <IsometricButton {...KEYCAP_PRIMARY} label={t('hero.ctaContact')} link="#contact" />
-          <IsometricButton {...KEYCAP_SECONDARY} label={t('hero.ctaResume')} link="/resume.pdf" newTab />
+          {__HAS_RESUME__ && (
+            <IsometricButton {...KEYCAP_SECONDARY} label={t('hero.ctaResume')} link="/resume.pdf" newTab />
+          )}
         </motion.div>
       </motion.div>
     </section>
