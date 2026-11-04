@@ -17,6 +17,11 @@ export interface ProjectConfig {
  *  then add the matching `projects.items.<id>` block to BOTH locale files. */
 export const PROJECTS: ProjectConfig[] = [
   {
+    id: 'prosumer',
+    url: 'https://github.com/JoaoCarlos134/prosumer',
+    tech: ['Python', 'pandas', 'LightGBM', 'Chronos-2', 'FastAPI', 'React'],
+  },
+  {
     id: 'newsRadio',
     url: 'https://github.com/JoaoCarlos134/News_radio',
     tech: ['Python', 'asyncio', 'Ollama', 'Kokoro TTS', 'pytest', 'GitHub Actions'],
@@ -25,5 +30,10 @@ export const PROJECTS: ProjectConfig[] = [
     id: 'academicSearch',
     url: 'https://github.com/JoaoCarlos134/academic-search',
     tech: ['Python', 'httpx', 'SQLAlchemy', 'sentence-transformers', 'Streamlit', 'Typer'],
+  },
+  {
+    id: 'loom',
+    url: 'https://github.com/JoaoCarlos134/Loom',
+    tech: ['Python', 'FastAPI', 'SQLite', 'fastembed', 'pyarrow', 'pywebview'],
   },
 ]

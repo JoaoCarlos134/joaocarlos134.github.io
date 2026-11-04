@@ -16,7 +16,7 @@
     "greeting": "Hi, my name is",
     "name": "João Carlos Jachenski Junior",
     "shortName": "João Carlos",
-    "role": "ML & Data Engineering · Photovoltaic and Energy Systems",
+    "role": "Machine Learning and Data Applied to Systems",
     "tagline": "Researching machine learning for photovoltaic and energy systems at LACTEC, from soiling detection to demand forecasting.",
     "ctaContact": "Get in touch",
     "ctaResume": "Download CV"
@@ -47,6 +47,24 @@
           "Weighted ranking with sentence-transformers embeddings and a graceful keyword fallback",
           "Retraction flagging against the Retraction Watch dataset, matched in O(1)"
         ]
+      },
+      "prosumer": {
+        "name": "prosumer",
+        "hook": "A Python library for day-ahead forecasting of PV generation and household consumption, the basis of my undergraduate thesis: from meter data to a complete, honest analysis.",
+        "highlights": [
+          "Every default decided by a benchmark of 57 models on real plants and houses, with a pilot and a gate before anything entered the library",
+          "Re-does the benchmark's forecasts exactly, checked model by model",
+          "Never picks \"the best model\" for you: the output is the median of the forecasts, scored against a fair reference, at several resolutions"
+        ]
+      },
+      "loom": {
+        "name": "Loom",
+        "hook": "A cross-domain recommender (anime, manga, books, music, movies and TV) that runs as a local desktop app, with no server and no cloud.",
+        "highlights": [
+          "~84,000 works from ten sources, reconciled across sources and calibrated onto one popularity scale",
+          "Two models served by the API: text embeddings and item-item collaborative filtering over 25M ratings",
+          "Recommends in a domain you have never rated, from your taste in another; 778 tests, ruff- and mypy-clean"
+        ]
       }
     }
   },
@@ -58,17 +76,33 @@
         "company": "Institutos Lactec (CFG Sector)",
         "period": "2025 to Present",
         "bullets": [
-          "Develop machine learning models for photovoltaic monitoring and electrical demand forecasting, contributing to 5 INPI-registered software systems and 2 peer-reviewed publications.",
+          "Develop machine learning models for photovoltaic monitoring and electrical demand forecasting, contributing to 6 INPI-registered software programs and 3 journal articles.",
           "Work across the full pipeline, from weather and sensor data processing to deployable soiling-detection and load-forecasting models for residential and utility-scale systems."
         ]
       },
       {
         "role": "Research Team Member",
-        "company": "Rede Agrointeligente (funded by ABPI)",
+        "company": "Rede Agrointeligente (funded by EMBRAPII)",
         "period": "2025 to Present",
         "bullets": [
           "Contribute to a research project developing renewable generation and energy storage solutions for irrigated agriculture, aiming to cut costs and carbon emissions in rural power systems.",
           "Part of a multi-institution team coordinated by Bruno Knevitz Hammerschmitt, alongside researchers from LACTEC."
+        ]
+      },
+      {
+        "role": "Team Member, Accumulator",
+        "company": "UFPR Fórmula (Formula SAE Electric)",
+        "period": "2024 to 2025",
+        "bullets": [
+          "Worked on the accumulator (high-voltage battery pack) of the electric competition car."
+        ]
+      },
+      {
+        "role": "Sales Team Member",
+        "company": "EMJEL, Electrical Engineering Junior Enterprise (UFPR)",
+        "period": "2024 to 2025",
+        "bullets": [
+          "Client prospecting and negotiation of the junior enterprise's electrical engineering projects."
         ]
       }
     ]
@@ -82,6 +116,13 @@
         "authors": "Hammerschmitt, B. K.; Jachenski Junior, J. C.; Mario, L.; Tonolo, E. A.; Fonseca, P. H.; Silva, R. M.; Menezes, N. P.",
         "title": "Soiling Status Detection in Photovoltaic Energy Systems Using Machine Learning and Weather Data for Cleaning Alerts",
         "venue": "Energies, vol. 19, p. 1964",
+        "year": "2026",
+        "tag": "JCR-indexed"
+      },
+      {
+        "authors": "Luz, T. J.; Leone, A. S.; Tonolo, E. A.; Rambo, M. V. H.; Jachenski, J. C.; Mantovan, F. M.; Rodolfo, T. A.; Schneider, P. S.; Hammerschmitt, B. K.",
+        "title": "Sustainable Hybrid Off-Grid Energy Systems for Rural Electrification in the Amazon Region",
+        "venue": "Energies, vol. 19, p. 5104",
         "year": "2026",
         "tag": "JCR-indexed"
       },
@@ -115,6 +156,11 @@
         "date": "Feb 2026"
       },
       {
+        "title": "SciKeywordMap: Keyword Neural Network",
+        "registry": "BR512026006715-4",
+        "date": "Jun 2026"
+      },
+      {
         "title": "PivotEnergy: System for Estimating Electric Load Profiles in Center-Pivot Irrigation",
         "registry": "BR512026006223-3",
         "date": "Jun 2026"
@@ -139,11 +185,16 @@
         "items": [
           "Python",
           "scikit-learn",
+          "LightGBM",
           "pandas / NumPy",
           "TensorFlow / Keras",
+          "FastAPI",
+          "SQL",
           "JavaScript",
+          "React / TypeScript",
           "HTML",
           "C++",
+          "Git / GitHub Actions",
           "Excel",
           "AutoCAD",
           "Cadence"
@@ -154,7 +205,8 @@
         "items": [
           "Portuguese (native)",
           "English (advanced)",
-          "German (intermediate)"
+          "German (intermediate)",
+          "French (basic)"
         ]
       }
     ]
@@ -207,11 +259,11 @@
     },
     "publications-articles": {
       "place": "Basel, Switzerland",
-      "info": "Energies (MDPI), where the soiling-detection paper was published"
+      "info": "Energies (MDPI), where two of the papers were published"
     },
     "publications-patents": {
       "place": "Rio de Janeiro, Brazil",
-      "info": "INPI: 5 software systems registered here"
+      "info": "INPI: 6 software programs registered here"
     },
     "education": {
       "place": "Curitiba, Brazil",

@@ -26,10 +26,10 @@ npm run lint       # oxlint
 
 All page copy is in `src/locales/en.json` and `src/locales/pt.json`, mirrored key-for-key. Edit both files together so the two languages never drift apart. Projects shown on the page are listed in `src/lib/projects.ts`, with their copy under `projects.items.<id>` in both locale files.
 
-Two things are still pending, and both stay hidden until they exist instead of shipping as broken links:
+Placeholders stay hidden until they are real, instead of shipping as broken links:
 
 - `contact.linkedin` is `TODO`; `Contact.tsx` only renders profile links that are real URLs.
-- The hero's CV button links to `/resume.pdf`. `vite.config.ts` checks for `public/resume.pdf` at build time and the button appears once the file is there.
+- The hero's CV button links to `/curriculo.pdf` (pt) or `/resume.pdf` (en). `vite.config.ts` checks that both are in `public/` at build time and leaves the button out otherwise. They are the public versions of the CV, without the phone number.
 
 ## Structure
 

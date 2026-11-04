@@ -22,7 +22,7 @@ const item = {
 }
 
 export function Hero() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const reduceMotion = useReducedMotion()
 
   // No overflow-hidden on the section: the keycap buttons throw a glow ~50px
@@ -91,7 +91,12 @@ export function Hero() {
         <motion.div variants={item} className="mt-4 flex flex-wrap items-center gap-8">
           <IsometricButton {...KEYCAP_PRIMARY} label={t('hero.ctaContact')} link="#contact" />
           {__HAS_RESUME__ && (
-            <IsometricButton {...KEYCAP_SECONDARY} label={t('hero.ctaResume')} link="/resume.pdf" newTab />
+            <IsometricButton
+              {...KEYCAP_SECONDARY}
+              label={t('hero.ctaResume')}
+              link={i18n.resolvedLanguage === 'pt' ? '/curriculo.pdf' : '/resume.pdf'}
+              newTab
+            />
           )}
         </motion.div>
       </motion.div>

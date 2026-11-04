@@ -16,7 +16,7 @@
     "greeting": "Olá, meu nome é",
     "name": "João Carlos Jachenski Junior",
     "shortName": "João Carlos",
-    "role": "Engenharia de ML & Dados · Sistemas Fotovoltaicos e de Energia",
+    "role": "Machine Learning e Dados Aplicados a Sistemas",
     "tagline": "Pesquisando machine learning aplicado a sistemas fotovoltaicos e energéticos no LACTEC, da detecção de sujidade à previsão de demanda.",
     "ctaContact": "Entrar em contato",
     "ctaResume": "Baixar currículo"
@@ -47,6 +47,24 @@
           "Ranqueamento ponderado com embeddings do sentence-transformers e fallback por palavra-chave quando o modelo não está disponível",
           "Sinalização de retratações contra a base do Retraction Watch, com correspondência em O(1)"
         ]
+      },
+      "prosumer": {
+        "name": "prosumer",
+        "hook": "Biblioteca Python de previsão do dia seguinte para geração fotovoltaica e consumo residencial, base do meu TCC: dos dados do medidor a uma análise completa e honesta.",
+        "highlights": [
+          "Cada padrão escolhido por um benchmark de 57 modelos em usinas e casas reais, com piloto e critério de aprovação antes de entrar na biblioteca",
+          "Refaz exatamente as previsões do benchmark, conferido modelo a modelo",
+          "Nunca escolhe \"o melhor modelo\" por você: entrega a mediana das previsões, avaliada contra uma referência justa, em várias resoluções"
+        ]
+      },
+      "loom": {
+        "name": "Loom",
+        "hook": "Sistema de recomendação entre domínios (anime, mangá, livros, música, filmes e séries) que roda como aplicativo desktop local, sem servidor e sem nuvem.",
+        "highlights": [
+          "~84 mil obras de dez fontes, reconciliadas entre fontes e calibradas numa única escala de popularidade",
+          "Dois modelos servidos pela API: embeddings de texto e filtragem colaborativa item-item sobre 25 milhões de avaliações",
+          "Recomenda num domínio que você nunca avaliou, a partir do seu gosto em outro; 778 testes, ruff e mypy sem achados"
+        ]
       }
     }
   },
@@ -58,17 +76,33 @@
         "company": "Institutos Lactec (Setor CFG)",
         "period": "Desde 2025",
         "bullets": [
-          "Desenvolvimento de modelos de machine learning para monitoramento fotovoltaico e previsão de demanda elétrica, contribuindo para 5 sistemas de software registrados no INPI e 2 publicações revisadas por pares.",
+          "Desenvolvimento de modelos de machine learning para monitoramento fotovoltaico e previsão de demanda elétrica, contribuindo para 6 programas de computador registrados no INPI e 3 artigos em periódicos.",
           "Atuação em todo o pipeline, do processamento de dados climáticos e de sensores até modelos implantáveis de detecção de sujidade e previsão de carga para sistemas residenciais e de concessionária."
         ]
       },
       {
         "role": "Integrante de Equipe de Pesquisa",
-        "company": "Rede Agrointeligente (financiado pela ABPI)",
+        "company": "Rede Agrointeligente (financiado pela EMBRAPII)",
         "period": "Desde 2025",
         "bullets": [
           "Contribuição em projeto de pesquisa que desenvolve soluções de geração renovável e armazenamento de energia para sistemas agrícolas irrigados, buscando reduzir custos e emissões de carbono no campo.",
           "Parte de equipe multi-institucional coordenada por Bruno Knevitz Hammerschmitt, ao lado de pesquisadores do LACTEC."
+        ]
+      },
+      {
+        "role": "Membro de Equipe, Acumulador",
+        "company": "UFPR Fórmula (Fórmula SAE Elétrico)",
+        "period": "2024 a 2025",
+        "bullets": [
+          "Trabalho no acumulador (banco de baterias de alta tensão) do carro elétrico de competição."
+        ]
+      },
+      {
+        "role": "Membro da Área de Vendas",
+        "company": "EMJEL, Empresa Júnior de Engenharia Elétrica (UFPR)",
+        "period": "2024 a 2025",
+        "bullets": [
+          "Prospecção de clientes e negociação de projetos de engenharia elétrica da empresa júnior."
         ]
       }
     ]
@@ -82,6 +116,13 @@
         "authors": "Hammerschmitt, B. K.; Jachenski Junior, J. C.; Mario, L.; Tonolo, E. A.; Fonseca, P. H.; Silva, R. M.; Menezes, N. P.",
         "title": "Soiling Status Detection in Photovoltaic Energy Systems Using Machine Learning and Weather Data for Cleaning Alerts",
         "venue": "Energies, v. 19, p. 1964",
+        "year": "2026",
+        "tag": "Indexado JCR"
+      },
+      {
+        "authors": "Luz, T. J.; Leone, A. S.; Tonolo, E. A.; Rambo, M. V. H.; Jachenski, J. C.; Mantovan, F. M.; Rodolfo, T. A.; Schneider, P. S.; Hammerschmitt, B. K.",
+        "title": "Sustainable Hybrid Off-Grid Energy Systems for Rural Electrification in the Amazon Region",
+        "venue": "Energies, v. 19, p. 5104",
         "year": "2026",
         "tag": "Indexado JCR"
       },
@@ -115,6 +156,11 @@
         "date": "Fev 2026"
       },
       {
+        "title": "SciKeywordMap: rede neural de palavras-chave",
+        "registry": "BR512026006715-4",
+        "date": "Jun 2026"
+      },
+      {
         "title": "PivotEnergy: Sistema para Estimativa do Perfil de Carga Elétrica em Pivôs Centrais de Irrigação",
         "registry": "BR512026006223-3",
         "date": "Jun 2026"
@@ -139,11 +185,16 @@
         "items": [
           "Python",
           "scikit-learn",
+          "LightGBM",
           "pandas / NumPy",
           "TensorFlow / Keras",
+          "FastAPI",
+          "SQL",
           "JavaScript",
+          "React / TypeScript",
           "HTML",
           "C++",
+          "Git / GitHub Actions",
           "Excel",
           "AutoCAD",
           "Cadence"
@@ -154,7 +205,8 @@
         "items": [
           "Português (nativo)",
           "Inglês (avançado)",
-          "Alemão (intermediário)"
+          "Alemão (intermediário)",
+          "Francês (básico)"
         ]
       }
     ]
@@ -207,11 +259,11 @@
     },
     "publications-articles": {
       "place": "Basileia, Suíça",
-      "info": "Energies (MDPI), onde o artigo sobre detecção de sujidade foi publicado"
+      "info": "Energies (MDPI), onde dois dos artigos foram publicados"
     },
     "publications-patents": {
       "place": "Rio de Janeiro, Brasil",
-      "info": "INPI: 5 sistemas de software registrados aqui"
+      "info": "INPI: 6 programas de computador registrados aqui"
     },
     "education": {
       "place": "Curitiba, Brasil",
