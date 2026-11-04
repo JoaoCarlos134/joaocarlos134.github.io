@@ -1,10 +1,11 @@
 {
   "meta": {
     "title": "João Carlos Jachenski Junior: Portfolio",
-    "description": "Electrical Engineering student and machine learning research scholar at LACTEC, working on photovoltaic monitoring and energy forecasting."
+    "description": "ML and data engineering for photovoltaic and energy systems. Research at LACTEC on soiling detection and demand forecasting, plus open-source Python projects."
   },
   "nav": {
     "about": "About",
+    "projects": "Projects",
     "experience": "Experience",
     "publications": "Publications",
     "skills": "Skills",
@@ -15,7 +16,7 @@
     "greeting": "Hi, my name is",
     "name": "João Carlos Jachenski Junior",
     "shortName": "João Carlos",
-    "role": "Electrical Engineering Student & ML Research Scholar",
+    "role": "ML & Data Engineering · Photovoltaic and Energy Systems",
     "tagline": "Researching machine learning for photovoltaic and energy systems at LACTEC, from soiling detection to demand forecasting.",
     "ctaContact": "Get in touch",
     "ctaResume": "Download CV"
@@ -23,6 +24,31 @@
   "about": {
     "heading": "About",
     "body": "I'm an Electrical Engineering student at the Federal University of Paraná (UFPR), with a technical background in Information Technology from TECPUC. I work as a research scholar at LACTEC (Laboratory of Analysis and Technological Science), on the CFG team, developing machine learning solutions for electrical and photovoltaic systems, from soiling detection to energy demand forecasting."
+  },
+  "projects": {
+    "heading": "Projects",
+    "viewSource": "View on GitHub",
+    "screenshotAlt": "Screenshot of {{name}}",
+    "items": {
+      "newsRadio": {
+        "name": "News Radio",
+        "hook": "An automated pipeline that turns each day's economy and geopolitics headlines into a two-voice podcast episode — collected, analysed, narrated and published without a human in the loop.",
+        "highlights": [
+          "221 tests, running with no GPU, no API key and no network",
+          "Dependency injection at every external boundary, so a stranger can clone and run the full pipeline over fixtures in one command",
+          "Cost engineered, not hoped for: R$27/month measured from real runs, only one metered API call in the system"
+        ]
+      },
+      "academicSearch": {
+        "name": "academic-search",
+        "hook": "Search four academic databases at once, collapse the duplicates they return, and rank what's left by semantic similarity, recency, source authority and citation count — with retracted papers flagged automatically.",
+        "highlights": [
+          "Cross-provider deduplication on normalized DOIs, with title fallback",
+          "Weighted ranking with sentence-transformers embeddings and a graceful keyword fallback",
+          "Retraction flagging against the Retraction Watch dataset, matched in O(1)"
+        ]
+      }
+    }
   },
   "experience": {
     "heading": "Experience",

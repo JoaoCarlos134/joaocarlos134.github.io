@@ -5,10 +5,21 @@ import { SectionHeading } from './SectionHeading'
 import IsometricButton from '@/components/originkit/ui/keycap-button'
 import { KEYCAP_PRIMARY, KEYCAP_SECONDARY } from '../lib/keycap'
 
+// Brand names, so they stay out of the locale files.
+const PROFILE_LABELS = { linkedin: 'LinkedIn', github: 'GitHub', lattes: 'Lattes' }
+
 export function Contact() {
   const { t } = useTranslation()
   const email = t('contact.email')
   const [copied, setCopied] = useState(false)
+
+  // contact.linkedin is still a "TODO" placeholder. Rather than ship a
+  // keycap that navigates to the literal string, hide any profile link
+  // that isn't a real URL yet — it comes back on its own once the locale
+  // files carry one.
+  const profiles = (['linkedin', 'github', 'lattes'] as const)
+    .map((key) => ({ key, label: PROFILE_LABELS[key], url: t(`contact.${key}`) }))
+    .filter((profile) => /^https?:\/\//.test(profile.url))
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(email)
@@ -19,7 +30,7 @@ export function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-3xl px-5 py-24">
       <ScrollReveal>
-        <SectionHeading eyebrow="06" title={t('contact.heading')} />
+        <SectionHeading id="contact" title={t('contact.heading')} />
         <p className="mt-4 max-w-lg text-ink-muted">{t('contact.body')}</p>
 
         <div className="mt-8 flex flex-wrap items-center gap-8">
@@ -28,9 +39,15 @@ export function Contact() {
             label={copied ? t('contact.copied') : email}
             onClick={copyEmail}
           />
-          <IsometricButton {...KEYCAP_SECONDARY} label="LinkedIn" link={t('contact.linkedin')} newTab />
-          <IsometricButton {...KEYCAP_SECONDARY} label="GitHub" link={t('contact.github')} newTab />
-          <IsometricButton {...KEYCAP_SECONDARY} label="Lattes" link={t('contact.lattes')} newTab />
+          {profiles.map((profile) => (
+            <IsometricButton
+              key={profile.key}
+              {...KEYCAP_SECONDARY}
+              label={profile.label}
+              link={profile.url}
+              newTab
+            />
+          ))}
         </div>
 
         {/* The keycap's label lives on a canvas-like 3D face, so the copy

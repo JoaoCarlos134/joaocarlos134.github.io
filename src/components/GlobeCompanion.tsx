@@ -41,7 +41,11 @@ export function GlobeCompanion() {
       animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.92 }}
       transition={{ duration: 0.35, ease: 'easeInOut' }}
     >
-      <div className="h-36 w-36 sm:h-48 sm:w-48 lg:h-[500px] lg:w-[500px]">
+      {/* Below lg the globe is a fixed overlay floating above the content, and
+          its dots are transparent — body text ran straight through it. A
+          frosted disc separates the two. At lg+ it moves into its own grid
+          column with nothing behind it, so the backing comes off. */}
+      <div className="h-36 w-36 rounded-full border border-border bg-surface shadow-sm sm:h-48 sm:w-48 lg:h-[500px] lg:w-[500px] lg:rounded-none lg:border-0 lg:bg-transparent lg:shadow-none">
         {mounted && (
           <Suspense fallback={null}>
             <Globe

@@ -1,10 +1,11 @@
 {
   "meta": {
     "title": "João Carlos Jachenski Junior: Portfólio",
-    "description": "Estudante de Engenharia Elétrica e bolsista de pesquisa em machine learning no LACTEC, atuando com monitoramento fotovoltaico e previsão de demanda energética."
+    "description": "Engenharia de ML e dados para sistemas fotovoltaicos e de energia. Pesquisa no LACTEC em detecção de sujidade e previsão de demanda, além de projetos open source em Python."
   },
   "nav": {
     "about": "Sobre",
+    "projects": "Projetos",
     "experience": "Experiência",
     "publications": "Publicações",
     "skills": "Habilidades",
@@ -15,7 +16,7 @@
     "greeting": "Olá, meu nome é",
     "name": "João Carlos Jachenski Junior",
     "shortName": "João Carlos",
-    "role": "Estudante de Engenharia Elétrica & Bolsista de Pesquisa em ML",
+    "role": "Engenharia de ML & Dados · Sistemas Fotovoltaicos e de Energia",
     "tagline": "Pesquisando machine learning aplicado a sistemas fotovoltaicos e energéticos no LACTEC, da detecção de sujidade à previsão de demanda.",
     "ctaContact": "Entrar em contato",
     "ctaResume": "Baixar currículo"
@@ -23,6 +24,31 @@
   "about": {
     "heading": "Sobre",
     "body": "Sou estudante de Engenharia Elétrica na Universidade Federal do Paraná (UFPR), com formação técnica em Informática pela TECPUC. Atuo como bolsista de pesquisa no LACTEC (Laboratório de Análises e Ciência Tecnológica), no setor CFG, desenvolvendo soluções de machine learning para sistemas elétricos e fotovoltaicos, da detecção de sujidade à previsão de demanda energética."
+  },
+  "projects": {
+    "heading": "Projetos",
+    "viewSource": "Ver no GitHub",
+    "screenshotAlt": "Captura de tela do {{name}}",
+    "items": {
+      "newsRadio": {
+        "name": "News Radio",
+        "hook": "Um pipeline automatizado que transforma as manchetes de economia e geopolítica do dia em um episódio de podcast com duas vozes — coletado, analisado, narrado e publicado sem intervenção humana.",
+        "highlights": [
+          "221 testes, rodando sem GPU, sem API key e sem rede",
+          "Dependency injection em toda fronteira externa: qualquer pessoa clona o repositório e roda o pipeline inteiro sobre fixtures com um único comando",
+          "Custo projetado, não estimado no otimismo: R$27/mês medidos em execuções reais, com uma única chamada de API tarifada no sistema"
+        ]
+      },
+      "academicSearch": {
+        "name": "academic-search",
+        "hook": "Busca em quatro bases acadêmicas ao mesmo tempo, colapsa as duplicatas que elas retornam e ranqueia o restante por similaridade semântica, atualidade, autoridade da fonte e número de citações — sinalizando artigos retratados automaticamente.",
+        "highlights": [
+          "Deduplicação entre provedores por DOI normalizado, com fallback por título",
+          "Ranqueamento ponderado com embeddings do sentence-transformers e fallback por palavra-chave quando o modelo não está disponível",
+          "Sinalização de retratações contra a base do Retraction Watch, com correspondência em O(1)"
+        ]
+      }
+    }
   },
   "experience": {
     "heading": "Experiência",

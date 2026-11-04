@@ -15,7 +15,7 @@ export function Education() {
   return (
     <section id="education" className="py-24">
       <ScrollReveal>
-        <SectionHeading eyebrow="05" title={t('education.heading')} />
+        <SectionHeading id="education" title={t('education.heading')} />
       </ScrollReveal>
 
       <div className="mt-8 flex flex-col gap-3">

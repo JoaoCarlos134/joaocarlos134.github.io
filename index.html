@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="João Carlos Jachenski Junior: portfolio & résumé." />
+    <!-- Pre-JS fallback: App.tsx swaps this for the translated
+         meta.description once React mounts, but link unfurlers and crawlers
+         that don't run JS only ever see this one, so it carries the same
+         positioning. -->
+    <meta
+      name="description"
+      content="ML and data engineering for photovoltaic and energy systems. Research at LACTEC on soiling detection and demand forecasting, plus open-source Python projects."
+    />
     <meta name="theme-color" content="#f5f8f6" />
     <title>João Carlos Jachenski Junior: Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />

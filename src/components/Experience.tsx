@@ -26,7 +26,7 @@ export function Experience() {
   return (
     <section id="experience" className="py-24">
       <ScrollReveal>
-        <SectionHeading eyebrow="02" title={t('experience.heading')} />
+        <SectionHeading id="experience" title={t('experience.heading')} />
       </ScrollReveal>
 
       <div ref={containerRef} className="relative mt-10">

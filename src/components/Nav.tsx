@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { SECTION_IDS } from '../lib/sections'
 
-const SECTION_IDS = ['about', 'experience', 'publications', 'skills', 'education', 'contact']
 // 'hero' is watched but has no nav link, so sitting at the top of the page
 // highlights nothing — it used to default to 'about', claiming you were in a
 // section you hadn't reached yet.

@@ -25,7 +25,7 @@ export function Publications() {
   return (
     <section id="publications" className="py-24">
       <ScrollReveal>
-        <SectionHeading eyebrow="03" title={t('publications.heading')} />
+        <SectionHeading id="publications" title={t('publications.heading')} />
       </ScrollReveal>
 
       <div id="publications-articles" className="mt-10 flex flex-col gap-3">

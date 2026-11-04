@@ -8,7 +8,7 @@ export function About() {
   return (
     <section id="about" className="py-24">
       <ScrollReveal>
-        <SectionHeading eyebrow="01" title={t('about.heading')} />
+        <SectionHeading id="about" title={t('about.heading')} />
         <p className="mt-6 text-lg leading-relaxed text-ink-muted">{t('about.body')}</p>
       </ScrollReveal>
     </section>

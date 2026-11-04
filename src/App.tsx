@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
+import { Projects } from './components/Projects'
 import { Experience } from './components/Experience'
 import { Publications } from './components/Publications'
 import { Skills } from './components/Skills'
@@ -42,6 +43,7 @@ function App() {
           <div className="flex flex-col lg:min-w-0">
             <Hero />
             <About />
+            <Projects />
             <Experience />
             <Publications />
             <Skills />

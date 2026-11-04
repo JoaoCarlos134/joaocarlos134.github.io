@@ -1,3 +1,5 @@
+import { SECTION_IDS } from './sections'
+
 export interface GeoCoord {
   lat: number
   lng: number
@@ -23,15 +25,13 @@ export const GEO_MARKERS: GeoCoord[] = [CURITIBA, BASEL, RIO]
 
 /** Every id the companion watches, in document order — includes ids with no
  *  stop (the globe just idles through those) and 'contact', which hides it. */
-export const GEO_WATCH_IDS = [
+export const GEO_WATCH_IDS: string[] = [
   'hero',
-  'about',
-  'experience',
-  'publications-articles',
-  'publications-patents',
-  'skills',
-  'education',
-  'contact',
+  // Publications is the one section the globe splits: its two halves sit in
+  // different places (Basel, Rio), so they're watched separately.
+  ...SECTION_IDS.flatMap((id) =>
+    id === 'publications' ? ['publications-articles', 'publications-patents'] : [id],
+  ),
 ]
 
 export const GEO_HIDE_ID = 'contact'
