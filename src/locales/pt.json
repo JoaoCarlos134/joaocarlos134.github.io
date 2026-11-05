@@ -72,6 +72,22 @@
     "heading": "Experiência",
     "items": [
       {
+        "role": "Membro de Equipe, Acumulador",
+        "company": "UFPR Fórmula (Fórmula SAE Elétrico)",
+        "period": "2024 a 2025",
+        "bullets": [
+          "Trabalho no acumulador (banco de baterias de alta tensão) do carro elétrico de competição."
+        ]
+      },
+      {
+        "role": "Membro da Área de Vendas",
+        "company": "EMJEL, Empresa Júnior de Engenharia Elétrica (UFPR)",
+        "period": "2024 a 2025",
+        "bullets": [
+          "Prospecção de clientes e negociação de projetos de engenharia elétrica da empresa júnior."
+        ]
+      },
+      {
         "role": "Bolsista de Pesquisa",
         "company": "Institutos Lactec (Setor CFG)",
         "period": "Desde 2025",
@@ -87,22 +103,6 @@
         "bullets": [
           "Contribuição em projeto de pesquisa que desenvolve soluções de geração renovável e armazenamento de energia para sistemas agrícolas irrigados, buscando reduzir custos e emissões de carbono no campo.",
           "Parte de equipe multi-institucional coordenada por Bruno Knevitz Hammerschmitt, ao lado de pesquisadores do LACTEC."
-        ]
-      },
-      {
-        "role": "Membro de Equipe, Acumulador",
-        "company": "UFPR Fórmula (Fórmula SAE Elétrico)",
-        "period": "2024 a 2025",
-        "bullets": [
-          "Trabalho no acumulador (banco de baterias de alta tensão) do carro elétrico de competição."
-        ]
-      },
-      {
-        "role": "Membro da Área de Vendas",
-        "company": "EMJEL, Empresa Júnior de Engenharia Elétrica (UFPR)",
-        "period": "2024 a 2025",
-        "bullets": [
-          "Prospecção de clientes e negociação de projetos de engenharia elétrica da empresa júnior."
         ]
       }
     ]
