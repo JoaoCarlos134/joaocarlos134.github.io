@@ -20,6 +20,7 @@ export const PROJECTS: ProjectConfig[] = [
     id: 'prosumer',
     url: 'https://github.com/JoaoCarlos134/prosumer',
     tech: ['Python', 'pandas', 'LightGBM', 'Chronos-2', 'FastAPI', 'React'],
+    image: '/projects/prosumer.jpg',
   },
   {
     id: 'newsRadio',
@@ -30,10 +31,12 @@ export const PROJECTS: ProjectConfig[] = [
     id: 'academicSearch',
     url: 'https://github.com/JoaoCarlos134/academic-search',
     tech: ['Python', 'httpx', 'SQLAlchemy', 'sentence-transformers', 'Streamlit', 'Typer'],
+    image: '/projects/academic-search.jpg',
   },
   {
     id: 'loom',
     url: 'https://github.com/JoaoCarlos134/Loom',
     tech: ['Python', 'FastAPI', 'SQLite', 'fastembed', 'pyarrow', 'pywebview'],
+    image: '/projects/loom.jpg',
   },
 ]
